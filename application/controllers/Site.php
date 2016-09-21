@@ -26,9 +26,10 @@ class Site extends MY_Controller {
 
 	public function brands() {
 
+		$this->data['brands'] = $this->get_brands();
 		$this->data['slug'] = 'brands';
 
-		$this->load->view('pages/under_construction', $this->data);
+		$this->load->view('pages/brands', $this->data);
 	}
 
 	public function about_us() {
