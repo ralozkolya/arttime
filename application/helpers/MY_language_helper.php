@@ -66,7 +66,7 @@ function lang_link($lang) {
 
 	if(!$link) $link = $lang;
 
-	return base_url().$link;
+	return base_url($link);
 }
 
 function get_lang() {

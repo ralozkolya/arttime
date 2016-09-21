@@ -8,8 +8,26 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosansgeorgian.css);
 
 
+/* BPG NINO MTAVRULI */
+
+@font-face {
+    font-family: 'BPG Nino Mtavruli';
+    src: url('../font/bpg-nino-mtavruli-webfont.eot'); /* IE9 Compat Modes */
+    src: url('../font/bpg-nino-mtavruli-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../font/bpg-nino-mtavruli-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../font/bpg-nino-mtavruli-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../font/bpg-nino-mtavruli-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../font/bpg-nino-mtavruli-webfont.svg#bpg_nino_mtavruliregular') format('svg'); /* Legacy iOS */
+}
+
+
 /*	HELPER CLASSES	*/
 
 .regular {
 	font-family: 'Noto Sans', 'Noto Sans Georgian', Arial, Sans-serif;
+}
+
+.caps {
+	font-family: 'BPG Nino Mtavruli', 'Noto Sans', Arial, Sans-serif;
+	text-transform: uppercase;
 }

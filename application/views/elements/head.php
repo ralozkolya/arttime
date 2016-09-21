@@ -16,6 +16,7 @@
 <!-- general.css -->
 <link rel="stylesheet" href="<?php echo static_url('css/fonts.css?v='.V); ?>">
 <link rel="stylesheet" href="<?php echo static_url('css/general.css?v='.V); ?>">
+<link rel="stylesheet" href="<?php echo static_url('css/header.css?v='.V); ?>">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="<?php echo static_url('img/favicon.png'); ?>">

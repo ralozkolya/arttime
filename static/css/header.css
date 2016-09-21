@@ -1,0 +1,51 @@
+.online-shop-button {
+	padding: 7px 7px 5px 7px;
+	display: inline-block;
+	border: solid 2px #dd1921;
+	font-size: 16px;
+	color: #dd1921 !important;
+}
+
+.lang {
+	font-weight: bold;
+}
+
+.logo {
+	width: 206px;
+}
+
+.nav-container {
+	margin-top: 2px;
+	margin-left: 210px;
+	height: 46px;
+	background: #101010;
+	border-top: solid 5px #bfbfbf;
+	color: white;
+}
+
+.navigation {
+	list-style: none;
+	padding: 0;
+	font-size: 16px;
+	font-weight: bold;
+	height: 100%;
+}
+
+.navigation > li {
+	float: left;
+	width: 20%;
+	height: 100%;
+	text-align: center;
+}
+
+.navigation > li > a {
+	display: inline-block;
+	padding-top: 10px;
+	position: relative;
+	height: 100%;
+}
+
+.navigation > li > a:hover {
+	border-top: solid 5px #dd1921;
+	top: -5px;
+}
