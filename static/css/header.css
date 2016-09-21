@@ -43,9 +43,10 @@
 	padding-top: 10px;
 	position: relative;
 	height: 100%;
+	border-top: solid 5px #bfbfbf;
+	top: -5px;
 }
 
-.navigation > li > a:hover {
+.navigation > li > a:hover, .navigation > li > a.active {
 	border-top: solid 5px #dd1921;
-	top: -5px;
 }

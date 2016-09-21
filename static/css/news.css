@@ -1,0 +1,38 @@
+.news {
+	height: 250px;
+	margin: 10px 0;
+	overflow: hidden;
+}
+
+.news > div {
+	height: 100%;
+	width: 50%;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.description {
+	position: relative;
+	overflow: hidden;
+	z-index: 50;
+}
+
+.image {
+	height: 100%;
+}
+
+.description > .image {
+	transform: scale(1.5);
+}
+
+.text {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background: rgba(200, 200, 200, 0.8);
+}

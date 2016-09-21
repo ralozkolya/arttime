@@ -28,7 +28,16 @@
 					<ul class="navigation">
 						<?php foreach($navigation as $n): ?>
 							<li>
-								<a class="unstyled" href="#"><?php echo $n->title; ?></a>
+								<?php
+									$class = 'unstyled';
+									if($n->slug === $slug) {
+										$class .= ' active';
+									}
+								?>
+								<a class="<?php echo $class; ?>"
+									href="<?php echo locale_url($n->slug); ?>">
+									<?php echo $n->title; ?>
+								</a>
 							</li>
 						<?php endforeach; ?>
 					</ul>

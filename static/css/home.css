@@ -35,6 +35,107 @@
 	background-size: cover;
 }
 
+.separator {
+	position: absolute;
+	width: 100%;
+	height: 102px;
+	background-image: url('../img/separator.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+	z-index: 100;
+}
+
+.separator.white {
+	background-image: url('../img/separator_white.png');
+}
+
+.separator.gray {
+	background-image: url('../img/separator_gray.png');
+}
+
+.red-square-container {
+	overflow: hidden;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	z-index: 0;
+}
+
+.red-square-container.left {
+	left: 0;
+}
+
+.red-square-container.right {
+	right: 0;
+}
+
+.red-square-container.bottom {
+	bottom: 0;
+}
+
+.red-square {
+	position: absolute;
+	top: -160px;
+	width: 300px;
+	height: 300px;
+	transform: rotate(45deg);
+	box-shadow: 0 0 5px #555;
+	background: #ec1c24;
+	border: solid 2px black;
+}
+
+.red-square-container.left > .red-square {
+	left: -160px;
+}
+
+.red-square-container.right > .red-square {
+	right: -160px;
+}
+
+.red-square-container.bottom > .red-square {
+	bottom: -160px;
+	top: auto;
+}
+
+.card {
+	padding-top: 120px;
+	padding-bottom: 100px;
+	background: white;
+}
+
+.card.gray {
+	background: #ecf0f1;
+}
+
+.card.dark-gray {
+	background: #d3d7d7;
+}
+
+.brand {
+	height: 70px;
+	margin: 20px 0;
+}
+
+.branch {
+	border: solid 2px black;
+	padding: 5px;
+	margin: 15px 0;
+	font-size: 18px;
+}
+
+.branch > .image {
+	height: 250px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.branch > .location {
+	color: red;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
 
 /*	MEDIA QUERIES	*/
 
@@ -59,4 +160,21 @@
 	.slider, .slide {
 		height: 400px;
 	}
+}
+
+
+/* OVERRIDES */
+
+body {
+	background: white;
+}
+
+.header {
+	box-shadow: none;
+}
+
+.content {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: white;
 }

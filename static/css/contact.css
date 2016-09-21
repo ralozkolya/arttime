@@ -1,0 +1,15 @@
+.send-button {
+	background: #eb1b23;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	outline: none;
+	border-radius: 0;
+}
+
+
+/* OVERRIDES */
+
+.content {
+	padding-top: 20px;
+}

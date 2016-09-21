@@ -22,6 +22,67 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="separator white"></div>
+			<div class="red-square-container left">
+				<div class="red-square"></div>
+			</div>
+
+			<div class="container card">
+				<div class="row">
+					<?php foreach($brands as $b): ?>
+						<div class="col-sm-4 col-md-3 brand">
+							<img alt="<?php echo $b->image; ?>"
+								src="<?php echo static_url('uploads/brands/'.$b->image); ?>">
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+
+			<div class="separator white"></div>
+			<div class="red-square-container right">
+				<div class="red-square"></div>
+			</div>
+
+			<div class="card gray">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3 text-center">
+							<img src="<?php echo static_url('img/logo_big.png'); ?>" alt="Art time">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-8 col-sm-offset-2">
+							<p class="text-center"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cumque ut, facilis aperiam praesentium. Maiores pariatur rem sequi eum dolores placeat, cum, nihil sit laboriosam veritatis consequuntur neque ipsa, nobis.</strong></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="separator gray"></div>
+			<div class="red-square-container right bottom">
+				<div class="red-square"></div>
+			</div>
+
+			<div class="card dark-gray">
+				<div class="container">
+					<div class="row">
+						<?php foreach($branches as $b): ?>
+							<div class="col-sm-4">
+								<div class="branch text-center">
+									<div class="image"
+										style="background-image: url('<?php echo static_url('uploads/branches/'.$b->image); ?>')"></div>
+									<div class="location caps"><?php echo $b->location; ?></div>
+									<div class="address caps"><?php echo $b->address; ?></div>
+									<div class="working-hours caps"><?php echo $b->working_hours; ?></div>
+									<div class="phone caps"><?php echo $b->phone; ?></div>
+								</div>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<?php $this->load->view('elements/footer'); ?>
