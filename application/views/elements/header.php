@@ -30,11 +30,17 @@
 							<li>
 								<?php
 									$class = 'unstyled';
+
 									if($n->slug === $slug) {
 										$class .= ' active';
 									}
 								?>
 								<a class="<?php echo $class; ?>"
+
+									<?php if(!empty($n->scroll_to))
+										echo "data-scroll-to='{$n->scroll_to}'";
+									?>
+
 									href="<?php echo locale_url($n->slug); ?>">
 									<?php echo $n->title; ?>
 								</a>

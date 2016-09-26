@@ -23,7 +23,7 @@
 				</div>
 			</div>
 
-			<div class="separator white"></div>
+			<div class="separator white" id="brands"></div>
 			<div class="red-square-container left">
 				<div class="red-square"></div>
 			</div>

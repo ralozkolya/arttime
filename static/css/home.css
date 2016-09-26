@@ -42,7 +42,7 @@
 	background-image: url('../img/separator.png');
 	background-position: top center;
 	background-repeat: no-repeat;
-	z-index: 100;
+	z-index: 50;
 }
 
 .separator.white {
@@ -174,7 +174,6 @@ body {
 }
 
 .content {
-	padding-top: 20px;
 	padding-bottom: 20px;
 	background: white;
 }

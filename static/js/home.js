@@ -9,4 +9,20 @@ $(function(){
 		delay: 7000,
 	});
 
+	$('[data-scroll-to]').click(function(){
+		showBrands();
+		return false;
+	});
+
+	if(location.hash === '#brands') {
+		showBrands();
+	}
+
+	function showBrands() {
+
+		$('body').animate({
+			scrollTop: $('#brands').offset().top - $('.header').height() - 20,
+		}, 500);
+	}
+
 });
