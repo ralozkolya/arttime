@@ -28,7 +28,7 @@ img {
 
 .content {
 	position: relative;
-	padding-top: 110px;
+	padding-top: 140px;
 	padding-bottom: 140px;
 }
 
@@ -64,4 +64,67 @@ img {
 
 .red {
 	color: #eb1b23;
+}
+
+.social {
+	position: fixed;
+	top: 200px;
+	left: 0;
+	color: white;
+	font-size: 25px;
+}
+
+.social > ul {
+	padding: 0;
+	list-style: none;
+}
+
+.social > ul > li {
+	height: 100%;
+}
+
+.social-link {
+	display: inline-block;
+	height: 50px;
+	width: 50px;
+	margin: 5px 0;
+	padding: 10px;
+	text-align: center;
+}
+
+.social-arrow {
+	display: none;
+	position: absolute;
+	top: 5px;
+	left: 50px;
+	padding-top: 15px;
+	background: #30497e;
+	height: 50px;
+	font-size: 15px;
+}
+
+.facebook-pages {
+	position: absolute;
+	top: -3px;
+	left: 15px;
+}
+
+.facebook-pages img {
+	padding: 2px;
+	background: white;
+	border: solid 1px #30497e; 
+	max-width: none;
+	margin-bottom: 12px;
+}
+
+.facebook {
+	background: #3b5998;
+}
+
+.instagram {
+	background: #bbaa7c;
+}
+
+.youtube {
+	background: #c4302a;
 }

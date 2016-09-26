@@ -51,4 +51,32 @@
 			</div>
 		</div>
 	</div>
+	<div class="social">
+		<ul>
+			<li>
+				<a class="unstyled social-link facebook" href="#">
+					<span class="fa fa-facebook"></span>
+				</a><!-- 
+				 --><span class="social-arrow">
+					<span class="glyphicon glyphicon-triangle-right"></span>
+					<span class="facebook-pages">
+						<a href="https://www.facebook.com/Arttimegeo/" target="_blank">
+							<img src="<?php echo static_url('img/arttime_social.png'); ?>"
+								alt="Arttime">
+						</a>
+						<a href="https://www.facebook.com/Swatchgeo/" target="_blank">
+							<img src="<?php echo static_url('img/swatch_social.png'); ?>"
+								alt="Swatch">
+						</a>
+					</span>
+				</span>
+			</li>
+			<li><a class="unstyled social-link instagram" href="#">
+				<span class="fa fa-instagram"></span>
+			</a></li>
+			<li><a class="unstyled social-link youtube" href="#">
+				<span class="fa fa-youtube"></span>
+			</a></li>
+		</ul>
+	</div>
 </div>
