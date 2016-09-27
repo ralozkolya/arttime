@@ -49,6 +49,11 @@
 						</div>
 					<?php endforeach; ?>
 				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h2 class="text-center">Under Construction</h2>
+					</div>
+				</div>
 			</div>
 		</div>
 

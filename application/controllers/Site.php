@@ -69,7 +69,7 @@ class Site extends MY_Controller {
 				(object) ['title' => 'მთავარი', 'slug' => 'home'],
 				(object) ['title' => 'ბრენდები', 'slug' => '#brands', 'scroll_to' => '#brands'],
 				(object) ['title' => 'ჩვენს შესახებ', 'slug' => 'about_us'],
-				(object) ['title' => 'სიახლეები', 'slug' => 'news'],
+				(object) ['title' => 'ინფორმაცია', 'slug' => 'news'],
 				(object) ['title' => 'კონტაქტი', 'slug' => 'contact'],
 			];
 		}
@@ -79,7 +79,7 @@ class Site extends MY_Controller {
 				(object) ['title' => 'Home', 'slug' => 'home'],
 				(object) ['title' => 'Brands', 'slug' => '#brands', 'scroll_to' => '#brands'],
 				(object) ['title' => 'About us', 'slug' => 'about_us'],
-				(object) ['title' => 'News', 'slug' => 'news'],
+				(object) ['title' => 'Information', 'slug' => 'news'],
 				(object) ['title' => 'Contact', 'slug' => 'contact'],
 			];
 		}
