@@ -13,3 +13,6 @@ $lang['name'] = 'სახელი';
 $lang['email'] = 'იმეილი';
 $lang['message'] = 'წერილი';
 $lang['send'] = 'გაგზავნა';
+
+$lang['service'] = 'მომსახურება';
+$lang['necessary_info'] = 'საჭირო ინფორმაცია';

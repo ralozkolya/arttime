@@ -13,3 +13,6 @@ $lang['name'] = 'Name';
 $lang['email'] = 'Email';
 $lang['message'] = 'Message';
 $lang['send'] = 'Send';
+
+$lang['service'] = 'Consumer service';
+$lang['necessary_info'] = 'Information';
