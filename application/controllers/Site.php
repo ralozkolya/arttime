@@ -34,9 +34,10 @@ class Site extends MY_Controller {
 
 	public function about_us() {
 
+		$this->data['branches'] = $this->get_branches();
 		$this->data['slug'] = 'about_us';
 
-		$this->load->view('pages/under_construction', $this->data);
+		$this->load->view('pages/about_us', $this->data);
 	}
 
 	public function news() {
@@ -112,99 +113,9 @@ class Site extends MY_Controller {
 
 	private function get_branches() {
 
-		if(get_lang() === GE) {
-			return [
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '1.png',
-				],
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '2.png',
-				],
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '3.png',
-				],
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '2.png',
-				],
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '3.png',
-				],
-				(object) [
-					'location' => 'თბილისი',
-					'address' => 'გმირთა მოედანი',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '1.png',
-				],
-			];
-		}
+		$this->load->model('Branch');
 
-		else {
-			return [
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '1.png',
-				],
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '2.png',
-				],
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '3.png',
-				],
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '2.png',
-				],
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '3.png',
-				],
-				(object) [
-					'location' => 'Tbilisi',
-					'address' => 'Heroes Square',
-					'working_hours' => '10:30 - 19:00',
-					'phone' => '233 27 35',
-					'image' => '1.png',
-				],
-			];
-		}
+		return $this->Branch->get_list();
 	}
 
 	private function get_news() {
