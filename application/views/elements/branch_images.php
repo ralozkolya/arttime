@@ -1,4 +1,4 @@
-<?php if(!empty($branches)): ?>
+<?php if(!empty($gallery)): ?>
 
 <div class="fotorama"
 	data-nav="thumbs"
@@ -7,16 +7,10 @@
 	data-arrows="false"
 	data-click="false"
 	data-fit="cover">
-	<?php foreach($branches as $b): ?>
+	<?php foreach($gallery as $g): ?>
 		<img
-			alt="<?php echo $b->address; ?>"
-			data-id="<?php echo $b->id; ?>"
-			data-address="<?php echo $b->address; ?>"
-			data-location="<?php echo $b->location; ?>"
-			data-description="<?php echo $b->description; ?>"
-			data-latitude="<?php echo $b->latitude; ?>"
-			data-longitude="<?php echo $b->longitude; ?>"
-			src="<?php echo static_url('uploads/branches/'.$b->image); ?>">
+			alt="<?php echo $g->image; ?>"
+			src="<?php echo static_url("uploads/branches/{$g->image}"); ?>">
 	<?php endforeach; ?>
 </div>
 

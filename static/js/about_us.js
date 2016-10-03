@@ -1,22 +1,9 @@
 $(function(){
-	$('.fotorama').on('fotorama:show fotorama:ready', function(e, fotorama, extra){
-		showActive(fotorama.activeFrame);
-	});
 
-	$('.fotorama__nav__frame').eq(0).trigger('click');
-});
-
-function showActive(branch) {
-
-	$('.address').html(branch.address);
-	$('.location').html(branch.location);
-	$('.description').html(branch.description);
-
-	//$('.address-link').attr('href', urls.branch+'/'+branch.id);
+	$('[data-scroll-to=about_us]').addClass('active');
 
 	var location = new google.maps.LatLng(
-		branch.latitude,
-		branch.longitude
+		lat, lng
 	);
 
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -28,4 +15,4 @@ function showActive(branch) {
 		position: location,
 		map: map,
 	});
-}
+});

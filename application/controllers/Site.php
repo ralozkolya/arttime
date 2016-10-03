@@ -24,17 +24,10 @@ class Site extends MY_Controller {
 		$this->load->view('pages/home', $this->data);
 	}
 
-	public function brands() {
+	public function branch($id) {
 
-		$this->data['brands'] = $this->get_brands();
-		$this->data['slug'] = 'brands';
-
-		$this->load->view('pages/brands', $this->data);
-	}
-
-	public function about_us() {
-
-		$this->data['branches'] = $this->get_branches();
+		$this->data['branch'] = $this->get_branch($id);
+		$this->data['gallery'] = $this->get_branch_gallery($id);
 		$this->data['slug'] = 'about_us';
 
 		$this->load->view('pages/about_us', $this->data);
@@ -68,8 +61,10 @@ class Site extends MY_Controller {
 		if(get_lang() === GE) {
 			return [
 				(object) ['title' => 'მთავარი', 'slug' => 'home'],
-				(object) ['title' => 'ბრენდები', 'slug' => '#brands', 'scroll_to' => '#brands'],
-				(object) ['title' => 'ჩვენს შესახებ', 'slug' => 'about_us'],
+				(object) ['title' => 'ბრენდები', 'slug' => '#brands',
+					'scroll_to' => 'brands'],
+				(object) ['title' => 'ჩვენს შესახებ', 'slug' => '#about_us',
+					'scroll_to' => 'about_us'],
 				(object) ['title' => 'ინფორმაცია', 'slug' => 'news'],
 				(object) ['title' => 'კონტაქტი', 'slug' => 'contact'],
 			];
@@ -78,8 +73,10 @@ class Site extends MY_Controller {
 		else {
 			return [
 				(object) ['title' => 'Home', 'slug' => 'home'],
-				(object) ['title' => 'Brands', 'slug' => '#brands', 'scroll_to' => '#brands'],
-				(object) ['title' => 'About us', 'slug' => 'about_us'],
+				(object) ['title' => 'Brands', 'slug' => '#brands',
+					'scroll_to' => 'brands'],
+				(object) ['title' => 'About us', 'slug' => '#about_us',
+					'scroll_to' => 'about_us'],
 				(object) ['title' => 'Information', 'slug' => 'news'],
 				(object) ['title' => 'Contact', 'slug' => 'contact'],
 			];
@@ -116,6 +113,20 @@ class Site extends MY_Controller {
 		$this->load->model('Branch');
 
 		return $this->Branch->get_list();
+	}
+
+	private function get_branch($id) {
+
+		$this->load->model('Branch');
+
+		return $this->Branch->get($id);
+	}
+
+	private function get_branch_gallery($branch) {
+
+		$this->load->model('Branch_gallery');
+
+		return $this->Branch_gallery->get_for_branch($branch);
 	}
 
 	private function get_news() {

@@ -70,14 +70,17 @@
 					<div class="row">
 						<?php foreach($branches as $b): ?>
 							<div class="col-sm-4">
-								<div class="branch text-center">
-									<div class="image"
-										style="background-image: url('<?php echo static_url('uploads/branches/'.$b->image); ?>')"></div>
-									<div class="location caps"><?php echo $b->location; ?></div>
-									<div class="address caps"><?php echo $b->address; ?></div>
-									<div class="working-hours caps"><?php echo $b->working_hours; ?></div>
-									<div class="phone caps"><?php echo $b->phone; ?></div>
-								</div>
+								<a href="<?php echo locale_url("branch/{$b->id}/$b->slug"); ?>"
+									class="unstyled">
+									<div class="branch text-center">
+										<div class="image"
+											style="background-image: url('<?php echo static_url('uploads/branches/'.$b->image); ?>')"></div>
+										<div class="location caps"><?php echo $b->location; ?></div>
+										<div class="address caps"><?php echo $b->address; ?></div>
+										<div class="working-hours caps"><?php echo $b->working_hours; ?></div>
+										<div class="phone caps"><?php echo $b->phone; ?></div>
+									</div>
+								</a>
 							</div>
 						<?php endforeach; ?>
 					</div>

@@ -8,13 +8,11 @@
 	<link rel="stylesheet" href="<?php echo static_url('css/about_us.css?v='.V); ?>">
 
 	<script>
-		var urls = {
-			branch: '<?php echo locale_url('branch'); ?>',
-		};
+		var lat = '<?php echo $branch->latitude; ?>';
+		var lng = '<?php echo $branch->longitude; ?>';
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuTWB4wr5HiQsQLEIK7B50R7OU2KSBCc"
-    async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuTWB4wr5HiQsQLEIK7B50R7OU2KSBCc"></script>
 
 	<script src="<?php echo static_url('js/about_us.js?v='.V); ?>"></script>
 
@@ -32,11 +30,23 @@
 						<?php $this->load->view('elements/branch_images'); ?>
 					</div>
 					<div class="col-sm-6 text-center">
-						<a href="#" class="unstyled address-link">
-							<h2 class="address caps"></h2>
-							<h3 class="location caps"></h3>
-						</a>
-						<p class="description"></p>
+						<h2 class="address caps">
+							<?php echo $branch->address; ?>
+						</h2>
+						<h3 class="location caps">
+							<?php echo $branch->location; ?>
+						</h3>
+						<br>
+						<h4 class="red">
+							<?php echo $branch->working_hours; ?>
+						</h4>
+						<h4>
+							<?php echo $branch->phone; ?>
+						</h4>
+						<br>
+						<p class="description">
+							<?php echo $branch->description; ?>
+						</p>
 						<div id="map"></div>
 					</div>
 				</div>

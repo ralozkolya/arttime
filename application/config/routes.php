@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['('.GE.'|'.EN.')/(:any)'] = 'site/$2';
 
 $route['('.GE.'|'.EN.')/post/(:num)/(:any)'] = 'site/post/$2';
+$route['('.GE.'|'.EN.')/branch/(:num)/(:any)'] = 'site/branch/$2';
 
 $route['('.GE.'|'.EN.')'] = 'site';
 
