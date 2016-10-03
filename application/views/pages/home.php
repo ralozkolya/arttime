@@ -60,7 +60,7 @@
 				</div>
 			</div>
 
-			<div class="separator gray"></div>
+			<div class="separator gray" id="about_us"></div>
 			<div class="red-square-container right bottom">
 				<div class="red-square"></div>
 			</div>

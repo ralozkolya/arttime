@@ -29,7 +29,7 @@
 						<?php foreach($navigation as $n): ?>
 							<li>
 								<?php
-									$class = 'unstyled';
+									$class = 'unstyled nav-link';
 
 									if($n->slug === $slug) {
 										$class .= ' active';
