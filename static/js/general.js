@@ -10,6 +10,6 @@ $(function(){
 	});
 
 	$('.navbar-toggle').click(function(){
-		$('.nav-container').slideToggle();
+		$('.nav-container').stop().slideToggle();
 	});
 });
