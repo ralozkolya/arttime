@@ -21,9 +21,15 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12 clearfix">
-				<a href="<?php echo locale_url(); ?>" class="unstyled pull-left">
+				<a href="<?php echo locale_url(); ?>" class="unstyled logo-container">
 					<img class="logo" src="<?php echo static_url('img/logo_header.png'); ?>" alt="Logo">
 				</a>
+				<button type="button" class="navbar-toggle visible-sm visible-xs pull-right">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 				<div class="nav-container">
 					<ul class="navigation">
 						<?php foreach($navigation as $n): ?>

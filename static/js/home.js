@@ -33,14 +33,16 @@ $(function(){
 		if(distance < 250) {
 			$('.nav-link').removeClass('active');
 			$('[data-scroll-to=brands]').addClass('active');
+			slideUpNavigation();
 			return;
 		}
 
-		distance = Math.abs(getRealOffset('brands'));
+		distance = Math.abs(getRealOffset('about_us'));
 
 		if(distance < 250) {
 			$('.nav-link').removeClass('active');
 			$('[data-scroll-to=about_us]').addClass('active');
+			slideUpNavigation();
 			return;
 		}
 		
@@ -50,6 +52,12 @@ $(function(){
 	});
 
 });
+
+function slideUpNavigation() {
+	if($('.navbar-toggle').is(':visible')) {
+		$('.nav-container').slideUp();
+	}
+}
 
 function getOffset(from) {
 	return $('#'+from).offset().top - $('.header').height() - 20;

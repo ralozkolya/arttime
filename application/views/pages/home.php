@@ -17,7 +17,7 @@
 		<div class="content">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 banner-container">
 						<?php $this->load->view('elements/banners'); ?>
 					</div>
 				</div>
@@ -31,7 +31,7 @@
 			<div class="container card">
 				<div class="row">
 					<?php foreach($brands as $b): ?>
-						<div class="col-sm-4 col-md-3 brand">
+						<div class="col-sm-4 col-md-3 brand text-center">
 							<img alt="<?php echo $b->image; ?>"
 								src="<?php echo static_url('uploads/brands/'.$b->image); ?>">
 						</div>

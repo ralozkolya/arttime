@@ -8,4 +8,8 @@ $(function(){
 	}, function(){
 		$('.social-arrow').stop().fadeOut();
 	});
+
+	$('.navbar-toggle').click(function(){
+		$('.nav-container').slideToggle();
+	});
 });
