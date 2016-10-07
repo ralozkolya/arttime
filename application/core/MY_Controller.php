@@ -12,10 +12,6 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 
 		$this->load->helper(array('language', 'cookie'));
-
-		set_language();
-
-		$this->load->language(array('general'));
 	}
 
 }

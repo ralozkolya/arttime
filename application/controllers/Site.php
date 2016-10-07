@@ -4,7 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Site extends MY_Controller {
 
 	public function __construct() {
+		
 		parent::__construct();
+
+		set_language();
+
+		$this->load->language(array('general'));
 
 		$this->data['navigation'] = $this->get_navigation();
 	}
