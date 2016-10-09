@@ -1,19 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['first'] = 'First';
-$lang['last'] = 'Last';
+$lang['first'] = 'პირველი';
+$lang['last'] = 'ბოლო';
 
-$lang['are_you_sure'] = 'Are you sure? This action cannot be undone';
-$lang['nothing_found'] = 'Nothing found';
-$lang['add'] = 'Add';
-$lang['change'] = 'Change';
-$lang['back'] = 'Back';
-$lang['delete'] = 'Delete';
-$lang['added_successfully'] = 'Added successfully';
-$lang['changed_successfully'] = 'Changed successfully';
-$lang['deleted_successfully'] = 'Deleted successfully';
-$lang['unexpected_error'] = 'Unexpected error occured';
+$lang['are_you_sure'] = 'დარწმუნებული ხართ? ამ ქმედების გაუქმება შეუძლებელია';
+$lang['nothing_found'] = 'ვერაფერი მოიძებნა';
+$lang['add'] = 'დამატება';
+$lang['change'] = 'შეცვლა';
+$lang['back'] = 'უკან';
+$lang['delete'] = 'წაშლა';
+$lang['added_successfully'] = 'დაემატა წარმატებით';
+$lang['changed_successfully'] = 'შეიცვალა წარმატებით';
+$lang['deleted_successfully'] = 'წაიშალა წარმატებით';
+$lang['unexpected_error'] = 'დაფიქსირდა შეცდომა';
 
 $lang['login'] = 'შესვლა';
 $lang['logout'] = 'გამოსვლა';
@@ -22,56 +22,28 @@ $lang['password'] = 'პაროლი';
 $lang['incorrect_credentials'] = 'არასწორი მომხმარებლის სახელი ან პაროლი';
 $lang['unauthorized'] = 'ამ გვერდის სანახავად ავტორიზაციაა საჭირო';
 
-$lang['products'] = 'Products';
-$lang['pages'] = 'Pages';
-$lang['categories'] = 'Categories';
-$lang['banners'] = 'Banners';
-$lang['existing_categories'] = 'Existing categories';
-$lang['existing_subcategories'] = 'Existing subcategories';
-$lang['add_category'] = 'Add category';
-$lang['add_subcategory'] = 'Add subcategory';
+$lang['pages'] = 'გვერდები';
+$lang['banners'] = 'ბანერები';
 
 $lang['id'] = 'ID';
-$lang['ka_name'] = 'Name in Georgian';
-$lang['en_name'] = 'Name in English';
-$lang['ru_name'] = 'Name in Russian';
-$lang['parent'] = 'Parent (You cannot change that later)';
-$lang['top_level'] = 'None (this is top-level category)';
+$lang['ka_name'] = 'სახელი ქართულად';
+$lang['en_name'] = 'სახელი ინგლისურად';
 
-$lang['edit_category'] = 'Edit category';
-$lang['edit_product'] = 'Edit product';
-
-$lang['choose_page'] = 'Choose page';
+$lang['choose_page'] = 'აირჩიეთ გვერდი';
 
 $lang['ka_title'] = 'Title in Georgian';
 $lang['en_title'] = 'Title in English';
-$lang['ru_title'] = 'Title in Russian';
 $lang['ka_body'] = 'Content in Georgian';
 $lang['en_body'] = 'Content in English';
-$lang['ru_body'] = 'Content in Russian';
 $lang['priority'] = 'Priority';
 $lang['priority_description'] = 'Priority (items with less priority will be displayed first)';
 
-$lang['existing_products'] = 'Existing products';
-
-$lang['add_product'] = 'Add Product';
-$lang['category'] = 'Category';
 $lang['ka_description'] = 'Description in Georgian';
 $lang['en_description'] = 'Description in English';
-$lang['ru_description'] = 'Description in Russian';
-$lang['price'] = 'Price';
-$lang['ka_price_label'] = 'Price label in Georgian';
-$lang['en_price_label'] = 'Price label in English';
-$lang['ru_price_label'] = 'Price label in Russian';
-$lang['in_stock'] = 'In stock';
-$lang['for_sale'] = 'For sale';
-$lang['video'] = 'Video';
-$lang['none'] = 'None';
 
 $lang['gallery'] = 'Gallery';
 $lang['upload_recommended'] = 'Upload (recommended resolution: 800x800)';
 $lang['upload'] = 'Upload';
-$lang['product'] = 'Product';
 
 $lang['existing_banners'] = 'Existing banners';
 $lang['add_banner'] = 'Add banner';
@@ -84,16 +56,14 @@ $lang['existing_pinned_links'] = 'Existing pinned links';
 $lang['add_pinned_link'] = 'Add pinned link';
 $lang['image_pinned'] = 'Image (recommended resolution: 400x300)';
 
-$lang['user'] = 'User';
-$lang['repeat_password'] = 'Repeat password';
+$lang['user'] = 'მომხმარებელი';
+$lang['repeat_password'] = 'გაიმეორეთ პაროლი';
 
 $lang['images'] = 'Images (recommended resolution: 800x800)';
 
-$lang['brands'] = 'Brands';
+$lang['brands'] = 'ბრებდები';
 $lang['existing_brands'] = 'Existing brands';
 $lang['add_brand'] = 'Add brand';
-
-$lang['orders'] = 'Orders';
 
 $lang['pending'] = 'Processing...';
 $lang['completed'] = 'Completed successfully';

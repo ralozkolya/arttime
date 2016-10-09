@@ -5,6 +5,9 @@ class MY_Controller extends CI_Controller {
 
 	protected $data = array(
 		'title' => 'Arttime',
+		'highlighted' => 'none',
+		'success_message' => NULL,
+		'error_message' => NULL,
 	);
 
 	public function __construct() {

@@ -38,3 +38,6 @@ $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER
 $protocol = $secure ? 'https://' : 'http://';
 define('SECURE', $secure);
 define('PROTOCOL', $protocol);
+
+define('SUCCESS', 'success_message');
+define('ERROR', 'error_message');
