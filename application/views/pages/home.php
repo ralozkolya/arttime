@@ -32,8 +32,15 @@
 				<div class="row">
 					<?php foreach($brands as $b): ?>
 						<div class="col-sm-4 col-md-3 brand text-center">
+							<?php if(empty($b->link)): ?>
 							<img alt="<?php echo $b->image; ?>"
 								src="<?php echo static_url('uploads/brands/'.$b->image); ?>">
+							<?php else: ?>
+								<a  target="_blank" class="unstyled" href="<?php echo $b->link; ?>">
+									<img alt="<?php echo $b->image; ?>"
+										src="<?php echo static_url('uploads/brands/'.$b->image); ?>">
+								</a>
+							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>
 				</div>
@@ -53,8 +60,8 @@
 					</div>
 					<br>
 					<div class="row">
-						<div class="col-sm-8 col-sm-offset-2">
-							<p class="text-center"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cumque ut, facilis aperiam praesentium. Maiores pariatur rem sequi eum dolores placeat, cum, nihil sit laboriosam veritatis consequuntur neque ipsa, nobis.</strong></p>
+						<div class="col-sm-8 col-sm-offset-2 text-center">
+							<?php echo $page->body; ?>
 						</div>
 					</div>
 				</div>

@@ -31,12 +31,12 @@ $lang['en_name'] = 'სახელი ინგლისურად';
 
 $lang['choose_page'] = 'აირჩიეთ გვერდი';
 
-$lang['ka_title'] = 'Title in Georgian';
-$lang['en_title'] = 'Title in English';
-$lang['ka_body'] = 'Content in Georgian';
-$lang['en_body'] = 'Content in English';
-$lang['priority'] = 'Priority';
-$lang['priority_description'] = 'Priority (items with less priority will be displayed first)';
+$lang['ka_title'] = 'სათაური ქართულად';
+$lang['en_title'] = 'სათაური ინგლისურად';
+$lang['ka_body'] = 'შიგთავსი ქართულად';
+$lang['en_body'] = 'შიგთავსი ინგლისურად';
+$lang['priority'] = 'პრიორიტეტი';
+$lang['priority_description'] = 'პრიორიტეტი (ჩანაწერი ნაკლები პრიორიტეტით გამოჩნდება პირველი)';
 
 $lang['ka_description'] = 'Description in Georgian';
 $lang['en_description'] = 'Description in English';
@@ -45,16 +45,11 @@ $lang['gallery'] = 'Gallery';
 $lang['upload_recommended'] = 'Upload (recommended resolution: 800x800)';
 $lang['upload'] = 'Upload';
 
-$lang['existing_banners'] = 'Existing banners';
-$lang['add_banner'] = 'Add banner';
-$lang['image_banner'] = 'Image (recommended resolution: 1920x500)';
-$lang['link'] = 'Link';
-$lang['blank'] = 'Open in new tab';
-
-$lang['pinned_links'] = 'Pinned links';
-$lang['existing_pinned_links'] = 'Existing pinned links';
-$lang['add_pinned_link'] = 'Add pinned link';
-$lang['image_pinned'] = 'Image (recommended resolution: 400x300)';
+$lang['existing_banners'] = 'არსებული ბანერები';
+$lang['add_banner'] = 'ბანერის დამატება';
+$lang['image_banner'] = 'სურათი (რეკომენდირებული ზომა: 1140x400)';
+$lang['link'] = 'ბმული';
+$lang['blank'] = 'ახალ ტაბში გახსნა';
 
 $lang['user'] = 'მომხმარებელი';
 $lang['repeat_password'] = 'გაიმეორეთ პაროლი';
@@ -62,8 +57,11 @@ $lang['repeat_password'] = 'გაიმეორეთ პაროლი';
 $lang['images'] = 'Images (recommended resolution: 800x800)';
 
 $lang['brands'] = 'ბრებდები';
-$lang['existing_brands'] = 'Existing brands';
-$lang['add_brand'] = 'Add brand';
+$lang['existing_brands'] = 'არსებული ბრენდები';
+$lang['add_brand'] = 'ბრენდის დამატება';
+$lang['image_pinned'] = 'სურათი (რეკომენდირებული ზომა: 200x60)';
+
+$lang['branches'] = 'ფილიალები';
 
 $lang['pending'] = 'Processing...';
 $lang['completed'] = 'Completed successfully';

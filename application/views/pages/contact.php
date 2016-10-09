@@ -13,7 +13,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2 class="caps text-center"><strong><?php echo lang('contact'); ?></strong></h2>
+						<h2 class="caps text-center">
+							<strong><?php echo $page->title; ?></strong>
+						</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -42,7 +44,7 @@
 						<br>
 						<br>
 						<br>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae sunt quibusdam voluptatem, iste fugiat itaque at, minus ea non adipisci autem ullam enim quis doloremque officia dolorum placeat dignissimos eligendi.</p>
+						<?php echo $page->body; ?>
 					</div>
 				</div>
 			</div>

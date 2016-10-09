@@ -39,6 +39,17 @@
 		<li>
 			<?php
 				$class = 'unstyled';
+				if($highlighted === 'branches') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/branches'); ?>">
+				<?php echo lang('branches'); ?>
+			</a>
+		</li>
+		<li>
+			<?php
+				$class = 'unstyled';
 				if($highlighted === 'user') {
 					$class .= ' active';
 				}

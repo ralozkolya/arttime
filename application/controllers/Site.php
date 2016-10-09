@@ -9,6 +9,8 @@ class Site extends MY_Controller {
 
 		set_language();
 
+		$this->load->model('Page');
+
 		$this->load->language(array('general'));
 
 		$this->data['navigation'] = $this->get_navigation();
@@ -20,6 +22,8 @@ class Site extends MY_Controller {
 	}
 
 	public function home() {
+
+		$this->data['page'] = $this->Page->get_by_key('slug', 'home');
 
 		$this->data['banners'] = $this->get_banners();
 		$this->data['brands'] = $this->get_brands();
@@ -56,6 +60,7 @@ class Site extends MY_Controller {
 
 	public function contact() {
 
+		$this->data['page'] = $this->Page->get_by_key('slug', 'contact');
 		$this->data['slug'] = 'contact';
 
 		$this->load->view('pages/contact', $this->data);
@@ -89,28 +94,16 @@ class Site extends MY_Controller {
 	}
 
 	private function get_banners() {
-		return [
-			(object) ['link' => '', 'blank' => FALSE, 'image' => 'banner.png'],
-			(object) ['link' => '', 'blank' => FALSE, 'image' => 'banner.png'],
-		];
+
+		$this->load->model('Banner');
+		return $this->Banner->get_list();
 	}
 
 	private function get_brands() {
 
-		return [
-			(object) ['image' => 'longines.png'],
-			(object) ['image' => 'swatch.png'],
-			(object) ['image' => 'flik_flak.png'],
-			(object) ['image' => 'calvin_klein.png'],
-			(object) ['image' => 'swatch.png'],
-			(object) ['image' => 'flik_flak.png'],
-			(object) ['image' => 'calvin_klein.png'],
-			(object) ['image' => 'longines.png'],
-			(object) ['image' => 'flik_flak.png'],
-			(object) ['image' => 'swatch.png'],
-			(object) ['image' => 'longines.png'],
-			(object) ['image' => 'calvin_klein.png'],
-		];
+		$this->load->model('Brand');
+
+		return $this->Brand->get_list();
 	}
 
 	private function get_branches() {

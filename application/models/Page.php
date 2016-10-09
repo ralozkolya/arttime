@@ -30,7 +30,17 @@ class Page extends MY_Model {
 		return parent::get_list();
 	}
 
-	
+	public function get_by_key($key, $value) {
+
+		$lang = get_lang_code(get_lang());
+
+		$this->db->select(array(
+			$lang.'_title as title',
+			$lang.'_body as body',
+		));
+
+		return parent::get_by_key($key, $value);
+	}
 
 }
 
