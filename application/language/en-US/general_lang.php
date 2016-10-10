@@ -11,7 +11,7 @@ $lang['contact_info'] = 'Contact information';
 
 $lang['name'] = 'Name';
 $lang['email'] = 'E-mail';
-$lang['Subject'] = 'E-mail';
+$lang['subject'] = 'Subject';
 $lang['message'] = 'Text';
 $lang['send'] = 'Send';
 
