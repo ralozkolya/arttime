@@ -31,6 +31,10 @@
 								<input class="form-control" name="email" id="email">
 							</div>
 							<div class="form-group">
+								<?php echo lang('subject', 'subject'); ?>
+								<input class="form-control" name="subject" id="subject">
+							</div>
+							<div class="form-group">
 								<?php echo lang('message', 'message'); ?>
 								<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
 							</div>

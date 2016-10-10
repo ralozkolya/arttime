@@ -10,8 +10,9 @@ $lang['contact_us'] = 'დაგვიკავშირდით';
 $lang['contact_info'] = 'საკონტაქტო ინფორმაცია';
 
 $lang['name'] = 'სახელი';
-$lang['email'] = 'იმეილი';
-$lang['message'] = 'წერილი';
+$lang['email'] = 'ელ. ფოსტა';
+$lang['subject'] = 'თემა';
+$lang['message'] = 'ტექსტი';
 $lang['send'] = 'გაგზავნა';
 
 $lang['service'] = 'მომსახურება';
