@@ -23,7 +23,7 @@
 				<div class="col-sm-6">
 					<?php echo lang('choose_page', 'choose_page'); ?>
 					<select class="form-control" id="choose_page">
-						<option></option>
+						<option selected></option>
 						<?php foreach($pages as $p): ?>
 							<option value="<?php echo $p->id; ?>"><?php echo $p->title; ?></option>
 						<?php endforeach; ?>
