@@ -16,16 +16,24 @@ class Page extends MY_Model {
 		return parent::get($id);
 	}
 
-	public function get_navigation() {
+	public function get_navigation($sub = FALSE) {
 
 		$lang = get_lang_code(get_lang());
 
 		$this->db->select([
 			"{$lang}_title as title",
-			'id', 'slug',
+			'id', 'slug', 'scroll_to',
 		]);
 
-		$this->db->where('navigation', 1);
+		if(!$sub) {
+			$this->db->where('navigation', 1);
+		}
+
+		else {
+			$this->db->where('parent', 4);
+		}
+
+		$this->db->order_by('priority');
 
 		return parent::get_list();
 	}

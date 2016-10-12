@@ -24,7 +24,7 @@ class Admin extends MY_Controller {
 
 	public function pages() {
 
-		$this->data['pages'] = $this->Page->get_navigation();
+		$this->data['pages'] = $this->Page->get_list();
 		$this->data['highlighted'] = 'pages';
 		$this->load->view('pages/admin/pages', $this->data);
 	}

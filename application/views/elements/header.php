@@ -33,7 +33,11 @@
 				<div class="nav-container">
 					<ul class="navigation">
 						<?php foreach($navigation as $n): ?>
-							<li>
+							<?php if($n->id === '4'): ?>
+								<li class="parent">
+							<?php else: ?>
+								<li>
+							<?php endif; ?>
 								<?php
 									$class = 'unstyled nav-link';
 
@@ -50,6 +54,16 @@
 									href="<?php echo locale_url($n->slug); ?>">
 									<?php echo $n->title; ?>
 								</a>
+
+								<?php if($n->id === '4'): ?>
+									<ul class="subnav">
+										<?php foreach($subnavigation as $s): ?>
+											<li>
+												<a class="unstyled" href="<?php echo locale_url($s->slug); ?>"><?php echo $s->title; ?></a>
+											</li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
 							</li>
 						<?php endforeach; ?>
 					</ul>

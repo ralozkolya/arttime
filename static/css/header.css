@@ -56,6 +56,17 @@
 	color: #dd1921;
 }
 
+.subnav {
+	display: none;
+	list-style: none;
+	padding: 0;
+	background: #333;
+}
+
+.subnav > li {
+	padding: 5px 0;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 992px) {

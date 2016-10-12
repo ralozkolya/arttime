@@ -25,7 +25,7 @@
 					<select class="form-control" id="choose_page">
 						<option selected></option>
 						<?php foreach($pages as $p): ?>
-							<option value="<?php echo $p->id; ?>"><?php echo $p->title; ?></option>
+							<option value="<?php echo $p->id; ?>"><?php echo $p->ka_title; ?></option>
 						<?php endforeach; ?>
 					</select>
 				</div>

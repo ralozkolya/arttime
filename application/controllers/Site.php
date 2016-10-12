@@ -14,6 +14,7 @@ class Site extends MY_Controller {
 		$this->load->language(array('general'));
 
 		$this->data['navigation'] = $this->get_navigation();
+		$this->data['subnavigation'] = $this->get_navigation(TRUE);
 	}
 
 	public function index()	{
@@ -46,6 +47,25 @@ class Site extends MY_Controller {
 
 		$this->data['slug'] = 'news';
 
+		$this->data['page'] = $this->Page->get_by_key('slug', 'news');
+		$this->data['news'] = $this->get_news();
+		$this->load->view('pages/news', $this->data);
+	}
+
+	public function tips() {
+
+		$this->data['slug'] = 'news';
+
+		$this->data['page'] = $this->Page->get_by_key('slug', 'tips');
+		$this->data['news'] = $this->get_news();
+		$this->load->view('pages/news', $this->data);
+	}
+
+	public function service() {
+
+		$this->data['slug'] = 'news';
+
+		$this->data['page'] = $this->Page->get_by_key('slug', 'service');
 		$this->data['news'] = $this->get_news();
 		$this->load->view('pages/news', $this->data);
 	}
@@ -66,31 +86,11 @@ class Site extends MY_Controller {
 		$this->load->view('pages/contact', $this->data);
 	}
 
-	private function get_navigation() {
+	private function get_navigation($sub = FALSE) {
 
-		if(get_lang() === GE) {
-			return [
-				(object) ['title' => 'მთავარი', 'slug' => 'home'],
-				(object) ['title' => 'ბრენდები', 'slug' => '#brands',
-					'scroll_to' => 'brands'],
-				(object) ['title' => 'ჩვენს შესახებ', 'slug' => '#about_us',
-					'scroll_to' => 'about_us'],
-				(object) ['title' => 'ინფორმაცია', 'slug' => 'news'],
-				(object) ['title' => 'კონტაქტი', 'slug' => 'contact'],
-			];
-		}
+		$this->load->model('Page');
 
-		else {
-			return [
-				(object) ['title' => 'Home', 'slug' => 'home'],
-				(object) ['title' => 'Brands', 'slug' => '#brands',
-					'scroll_to' => 'brands'],
-				(object) ['title' => 'About us', 'slug' => '#about_us',
-					'scroll_to' => 'about_us'],
-				(object) ['title' => 'Information', 'slug' => 'news'],
-				(object) ['title' => 'Contact', 'slug' => 'contact'],
-			];
-		}
+		return $this->Page->get_navigation($sub);
 	}
 
 	private function get_banners() {

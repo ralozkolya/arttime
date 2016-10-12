@@ -40,14 +40,16 @@
 							<?php echo lang('priority_description', 'priority'); ?>
 							<input class="form-control" type="text" name="priority" value="<?php echo $page->priority; ?>">
 						</div>
-						<div class="form-group">
-							<?php echo lang('ka_body', 'ka_body'); ?>
-							<textarea class="form-control cke" name="ka_body"><?php echo $page->ka_body; ?></textarea>
-						</div>
-						<div class="form-group">
-							<?php echo lang('en_body', 'en_body'); ?>
-							<textarea class="form-control cke" name="en_body"><?php echo $page->en_body; ?></textarea>
-						</div>
+						<?php if($page->editable): ?>
+							<div class="form-group">
+								<?php echo lang('ka_body', 'ka_body'); ?>
+								<textarea class="form-control cke" name="ka_body"><?php echo $page->ka_body; ?></textarea>
+							</div>
+							<div class="form-group">
+								<?php echo lang('en_body', 'en_body'); ?>
+								<textarea class="form-control cke" name="en_body"><?php echo $page->en_body; ?></textarea>
+							</div>
+						<?php endif; ?>
 						<div class="form-group">
 							<input class="btn btn-default" type="submit" value="<?php echo lang('change'); ?>">
 							<a href="<?php echo base_url('admin/pages'); ?>" class="btn btn-primary"><?php echo lang('back'); ?></a>
