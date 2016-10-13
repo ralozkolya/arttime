@@ -89,7 +89,6 @@ class Admin extends MY_Controller {
 		$post = $this->input->post();
 
 		if($post) {
-
 			$this->edit('Banner', $post);
 		}
 
@@ -257,8 +256,6 @@ class Admin extends MY_Controller {
 		$this->load->view('pages/admin/branch', $this->data);
 	}
 
-
-
 	public function upload_images() {
 
 		if(!$this->form_validation->run('add_images')) {
@@ -269,6 +266,70 @@ class Admin extends MY_Controller {
 		$this->add_images($this->input->post('branch'), TRUE);
 		
 		redirect($this->agent->referrer());
+	}
+
+	public function information() {
+
+		$post = $this->input->post();
+
+		if($post) {
+
+			$this->load->library(['upload', 'image_lib']);
+
+			$config = [];
+			$config['allowed_types'] = 'png|jpg|gif';
+			$config['upload_path'] = 'static/uploads/news/';
+			$config['encrypt_name'] = TRUE;
+
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('image')) {
+
+				$upload = $this->upload->data();
+
+				$new_image = 'static/uploads/news/thumbs/'.$upload['file_name'];
+
+				if(isset($upload['full_path'])) {
+
+					$config = [];
+					$config['source_image'] = $upload['full_path'];
+					$config['source_image'] = $upload['full_path'];
+					$config['width'] = 400;
+					$config['height'] = 300;
+					$config['maintain_ratio'] = TRUE;
+					$config['new_image'] = $new_image;
+
+					$this->image_lib->initialize($config);
+					$this->image_lib->resize();
+				}
+
+				else {
+					$this->data['error_message'] = $this->image_lib->display_errors();
+				}
+
+				$post['image'] = $upload['file_name'];
+
+				$this->add('News', $post);
+
+				if(file_exists($upload['full_path'])) {
+					unlink($upload['full_path']);
+				}
+
+				if(file_exists($new_image)) {
+					unlink($new_image);
+				}
+			}
+
+			else {
+				$this->data['error_message'] = $this->upload->display_errors();
+			}
+		}
+
+		$this->data['highlighted'] = 'information';
+		$this->data['information'] = $this->Brand->get_list();
+		$this->data['priority'] = $this->Brand->get_next_priority();
+
+		$this->load->view('pages/admin/information', $this->data);
 	}
 
 	public function user() {

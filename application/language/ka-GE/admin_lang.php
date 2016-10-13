@@ -72,6 +72,8 @@ $lang['en_address'] = 'მისამართი ინგლისურა�
 $lang['working_hours'] = 'სამუშაო საათები';
 $lang['phone'] = 'ტელეფონი';
 
+$lang['information'] = 'ინფორმაცია';
+
 $lang['description'] = 'Description';
 $lang['date'] = 'Date';
 

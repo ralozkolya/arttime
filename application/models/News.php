@@ -25,7 +25,7 @@ class News extends MY_Model {
 		$this->db->select([
 			"{$lang}_title as title",
 			"{$lang}_body as body",
-			"slug", "image", "id",
+			"slug", "image", "id", "modified",
 		]);
 
 		return parent::get($id);

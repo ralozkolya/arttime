@@ -16,6 +16,9 @@
 						<img src="<?php echo static_url('uploads/news/'.$post->image); ?>" alt="<?php echo $post->title; ?>">
 					</div>
 					<div class="col-sm-6">
+						<div class="text-right">
+							<strong><?php echo date('Y-m-d', strtotime($post->modified)); ?></strong>
+						</div>
 						<h2 class="caps text-center">
 							<strong><?php echo $post->title; ?></strong>
 						</h2>
