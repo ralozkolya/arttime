@@ -8,7 +8,12 @@ class Admin extends MY_Controller {
 		parent::__construct();
 
 		$this->load->language('admin', GE);
-		$this->load->model(['User', 'Page', 'Banner', 'Brand']);
+
+		$this->load->model([
+			'User', 'Page', 'Banner', 'Brand',
+			'Branch', 'Branch_gallery',
+		]);
+
 		$this->load->library(['Auth', 'session', 'form_validation', 'user_agent']);
 
 		$this->data['user'] = $this->auth->get_current_user();
@@ -52,7 +57,7 @@ class Admin extends MY_Controller {
 
 		if($post) {
 
-			$config = array();
+			$config = [];
 			$config['allowed_types'] = 'png|jpg|gif';
 			$config['upload_path'] = 'static/uploads/banners/';
 			$config['encrypt_name'] = TRUE;
@@ -100,9 +105,9 @@ class Admin extends MY_Controller {
 
 		if($post) {
 
-			$this->load->library(array('upload', 'image_lib'));
+			$this->load->library(['upload', 'image_lib']);
 
-			$config = array();
+			$config = [];
 			$config['allowed_types'] = 'png|jpg|gif';
 			$config['upload_path'] = 'static/uploads/brands/';
 			$config['encrypt_name'] = TRUE;
@@ -117,7 +122,7 @@ class Admin extends MY_Controller {
 
 				if(isset($upload['full_path'])) {
 
-					$config = array();
+					$config = [];
 					$config['source_image'] = $upload['full_path'];
 					$config['source_image'] = $upload['full_path'];
 					$config['width'] = 400;
@@ -165,9 +170,9 @@ class Admin extends MY_Controller {
 
 		if($post) {
 
-			$this->load->library(array('upload', 'image_lib'));
+			$this->load->library(['upload', 'image_lib']);
 
-			$config = array();
+			$config = [];
 			$config['allowed_types'] = 'png|jpg|gif';
 			$config['upload_path'] = 'static/uploads/brands/';
 			$config['encrypt_name'] = TRUE;
@@ -180,9 +185,9 @@ class Admin extends MY_Controller {
 
 				$new_image = 'static/uploads/brands/thumbs/'.$upload['file_name'];
 
-				if(isset($upload['full_path'])) {
+				if(!empty($upload['full_path'])) {
 
-					$config = array();
+					$config = [];
 					$config['source_image'] = $upload['full_path'];
 					$config['source_image'] = $upload['full_path'];
 					$config['width'] = 400;
@@ -226,8 +231,44 @@ class Admin extends MY_Controller {
 
 	public function branches() {
 
+		$post = $this->input->post();
+
+		if($post) {
+			$this->add('Branch', $post);
+		}
+
+		$this->data['branches'] = $this->Branch->get_list();
 		$this->data['highlighted'] = 'branches';
 		$this->load->view('pages/admin/branches', $this->data);
+	}
+
+	public function branch($id) {
+
+		$post = $this->input->post();
+
+		if($post) {
+			$this->edit('Branch', $post);
+		}
+		
+		$this->data['branch'] = $this->Branch->get($id);
+		$this->data['gallery'] = $this->Branch_gallery->get_for_branch($id);
+		$this->data['highlighted'] = 'branches';
+
+		$this->load->view('pages/admin/branch', $this->data);
+	}
+
+
+
+	public function upload_images() {
+
+		if(!$this->form_validation->run('add_images')) {
+			$this->message(validation_errors(), ERROR);
+			$this->redirect();
+		}
+
+		$this->add_images($this->input->post('branch'), TRUE);
+		
+		redirect($this->agent->referrer());
 	}
 
 	public function user() {
@@ -261,9 +302,9 @@ class Admin extends MY_Controller {
 
 	public function add($type, $data) {
 
-		$allowed = array(
-			'Banner', 'Brand',
-		);
+		$allowed = [
+			'Banner', 'Brand', 'Branch',
+		];
 
 		$is_allowed = FALSE;
 
@@ -282,14 +323,10 @@ class Admin extends MY_Controller {
 			$data = $this->input->post();
 		}
 
-		if(isset($data[$this->security->get_csrf_token_name()])) {
-			unset($data[$this->security->get_csrf_token_name()]);
-		}
-
 		if($this->form_validation->run('add_'.$type)) {
 			if($this->$type->add($data)) {
 
-				if($type === 'Product') {
+				if($type === 'Branch') {
 
 					$this->add_images($this->db->insert_id());
 				}
@@ -310,9 +347,9 @@ class Admin extends MY_Controller {
 
 	public function edit($type, $data) {
 
-		$allowed = array(
-			'Banner', 'Page', 'Brand',
-		);
+		$allowed = [
+			'Banner', 'Page', 'Brand', 'Branch',
+		];
 
 		$is_allowed = FALSE;
 
@@ -329,10 +366,6 @@ class Admin extends MY_Controller {
 
 		if(empty($data)) {
 			$data = $this->input->post();
-		}
-
-		if(isset($data[$this->security->get_csrf_token_name()])) {
-			unset($data[$this->security->get_csrf_token_name()]);
 		}
 
 		if($this->form_validation->run('edit_'.$type)) {
@@ -354,9 +387,9 @@ class Admin extends MY_Controller {
 
 	public function delete($type, $id) {
 
-		$allowed = array(
-			'Banner', 'Brand',
-		);
+		$allowed = [
+			'Banner', 'Brand', 'Branch', 'Branch_gallery',
+		];
 
 		$is_allowed = FALSE;
 
@@ -382,6 +415,65 @@ class Admin extends MY_Controller {
 		$this->redirect();
 	}
 
+
+	private function add_images($branch, $display_error = FALSE) {
+
+		$this->load->library(['image_lib', 'upload']);
+
+		$config = [];
+		$config['allowed_types'] = 'png|jpg|gif';
+		$config['upload_path'] = 'static/uploads/branches/';
+		$config['encrypt_name'] = TRUE;
+
+		$this->upload->initialize($config);
+
+		$files = $_FILES;
+
+		$cpt = count($_FILES['images']['name']);
+
+		for($i = 0; $i < $cpt; $i++) {
+
+			$_FILES['images']['name'] = $files['images']['name'][$i];
+			$_FILES['images']['type'] = $files['images']['type'][$i];
+			$_FILES['images']['tmp_name'] = $files['images']['tmp_name'][$i];
+			$_FILES['images']['error'] = $files['images']['error'][$i];
+			$_FILES['images']['size'] = $files['images']['size'][$i];
+
+			if($this->upload->do_upload('images')) {
+
+				$upload = $this->upload->data();
+
+				if(isset($upload['full_path'])) {
+
+					$config = [];
+					$config['source_image'] = $upload['full_path'];
+					$config['source_image'] = $upload['full_path'];
+					$config['width'] = 300;
+					$config['height'] = 300;
+					$config['maintain_ratio'] = TRUE;
+					$config['new_image'] = 'static/uploads/branches/thumbs/'.$upload['file_name'];
+
+					$this->image_lib->initialize($config);
+					$this->image_lib->resize();
+				}
+
+				elseif($display_error) {
+					$this->data['error_message'] = $this->image_lib->display_errors();
+				}
+
+				$data = [];
+
+				$data['branch'] = $branch;
+				$data['image'] = $upload['file_name'];
+
+				$this->Branch_gallery->add($data);
+			}
+
+			elseif($display_error) {
+				$this->message($this->upload->display_errors(), ERROR);
+			}
+		}
+	}
 
 	private function message($message, $type = SUCCESS) {
 		$this->session->set_flashdata($type, $message);

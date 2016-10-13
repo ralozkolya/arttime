@@ -13,6 +13,10 @@ $(function(){
 		$('.nav-container').stop().slideToggle();
 	});
 
+	$('.parent > a').click(function(e){
+		return false;
+	});
+
 	$('.parent').hover(function(){
 		$('.subnav').stop().slideDown();
 	}, function(){

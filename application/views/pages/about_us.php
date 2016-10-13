@@ -12,7 +12,7 @@
 		var lng = '<?php echo $branch->longitude; ?>';
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWuTWB4wr5HiQsQLEIK7B50R7OU2KSBCc"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKjFhr8HXMMYDW5ZMO0sfrmWhkWXdxSvw"></script>
 
 	<script src="<?php echo static_url('js/about_us.js?v='.V); ?>"></script>
 

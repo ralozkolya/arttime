@@ -76,12 +76,23 @@
 				<div class="container">
 					<div class="row">
 						<?php foreach($branches as $b): ?>
+							<?php
+								$image = $b->image;
+
+								if(!$image) {
+									$image = static_url('img/no_image.png');
+								}
+
+								else {
+									$image = static_url('uploads/branches/thumbs/'.$image);
+								}
+							?>
 							<div class="col-sm-4">
 								<a href="<?php echo locale_url("branch/{$b->id}/$b->slug"); ?>"
 									class="unstyled">
 									<div class="branch text-center">
 										<div class="image"
-											style="background-image: url('<?php echo static_url('uploads/branches/'.$b->image); ?>')"></div>
+											style="background-image: url('<?php echo $image; ?>')"></div>
 										<div class="location caps"><?php echo $b->location; ?></div>
 										<div class="address caps"><?php echo $b->address; ?></div>
 										<div class="working-hours caps"><?php echo $b->working_hours; ?></div>

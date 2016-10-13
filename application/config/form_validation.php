@@ -131,3 +131,95 @@ $config['edit_Brand'] = array(
 		'rules' => 'numeric',
 	),
 );
+
+$config['add_Branch'] = array(
+
+	array(
+		'field' => 'ka_location',
+		'label' => 'lang:ka_location',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_location',
+		'label' => 'lang:en_location',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'ka_address',
+		'label' => 'lang:ka_address',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_address',
+		'label' => 'lang:en_address',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'working_hours',
+		'label' => 'lang:working_hours',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'phone',
+		'label' => 'lang:phone',
+		'rules' => 'required',
+	),
+);
+
+$config['edit_Branch'] = array(
+
+	array(
+		'field' => 'id',
+		'label' => 'lang:id',
+		'rules' => 'required|is_natural',
+	),
+
+	array(
+		'field' => 'ka_location',
+		'label' => 'lang:ka_location',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_location',
+		'label' => 'lang:en_location',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'ka_address',
+		'label' => 'lang:ka_address',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_address',
+		'label' => 'lang:en_address',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'working_hours',
+		'label' => 'lang:working_hours',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'phone',
+		'label' => 'lang:phone',
+		'rules' => 'required',
+	),
+);
+
+$config['add_images'] = array(
+	array(
+		'field' => 'branch',
+		'label' => 'lang:branch',
+		'rules' => 'required|is_natural',
+	),
+);

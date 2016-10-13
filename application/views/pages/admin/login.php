@@ -23,11 +23,6 @@
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
 				<form method="post">
-					<?php
-						$name = $this->security->get_csrf_token_name();
-						$hash = $this->security->get_csrf_hash();
-					?>
-					<input type="hidden" name="<?php echo $name; ?>" value="<?php echo $hash; ?>">
 					<div class="form-group">
 						<input class="form-control" type="text" name="username"
 							placeholder="<?php echo lang('username'); ?>" autofocus>

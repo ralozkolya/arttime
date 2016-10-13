@@ -38,12 +38,12 @@ $lang['en_body'] = 'შიგთავსი ინგლისურად';
 $lang['priority'] = 'პრიორიტეტი';
 $lang['priority_description'] = 'პრიორიტეტი (ჩანაწერი ნაკლები პრიორიტეტით გამოჩნდება პირველი)';
 
-$lang['ka_description'] = 'Description in Georgian';
-$lang['en_description'] = 'Description in English';
+$lang['ka_description'] = 'აღწერა ქართულად';
+$lang['en_description'] = 'აღწერა ინგლისურად';
 
-$lang['gallery'] = 'Gallery';
-$lang['upload_recommended'] = 'Upload (recommended resolution: 800x800)';
-$lang['upload'] = 'Upload';
+$lang['gallery'] = 'გალერეა';
+$lang['upload_recommended'] = 'ატვირთვა (რეკომენდირებული ზომა: 550x400)';
+$lang['upload'] = 'ატვირთვა';
 
 $lang['existing_banners'] = 'არსებული ბანერები';
 $lang['add_banner'] = 'ბანერის დამატება';
@@ -54,22 +54,26 @@ $lang['blank'] = 'ახალ ტაბში გახსნა';
 $lang['user'] = 'მომხმარებელი';
 $lang['repeat_password'] = 'გაიმეორეთ პაროლი';
 
-$lang['images'] = 'Images (recommended resolution: 800x800)';
+$lang['images'] = 'სურათები (რეკომენდირებული ზომა: 550x400)';
 
-$lang['brands'] = 'ბრებდები';
+$lang['brands'] = 'ბრენდები';
 $lang['existing_brands'] = 'არსებული ბრენდები';
 $lang['add_brand'] = 'ბრენდის დამატება';
 $lang['image_pinned'] = 'სურათი (რეკომენდირებული ზომა: 200x60)';
 
 $lang['branches'] = 'ფილიალები';
+$lang['existing_branches'] = 'არსებული ფილიალები';
+$lang['add_branch'] = 'ფილიალის დამატება';
 
-$lang['pending'] = 'Processing...';
-$lang['completed'] = 'Completed successfully';
+$lang['ka_location'] = 'ქალაქი ქართულად';
+$lang['en_location'] = 'ქალაქი ინგლისურად';
+$lang['ka_address'] = 'მისამართი ქართულად';
+$lang['en_address'] = 'მისამართი ინგლისურად';
+$lang['working_hours'] = 'სამუშაო საათები';
+$lang['phone'] = 'ტელეფონი';
+
 $lang['description'] = 'Description';
-$lang['status'] = 'Status';
-$lang['sum'] = 'Sum';
 $lang['date'] = 'Date';
-$lang['gel'] = 'GEL';
 
 $lang['name'] = 'Name';
 $lang['address'] = 'Address';
@@ -79,7 +83,6 @@ $lang['first_name'] = 'First name';
 $lang['last_name'] = 'Last name';
 $lang['personal_number'] = 'Personal number';
 $lang['email'] = 'Email';
-$lang['phone'] = 'Phone';
 $lang['registered'] = 'Registered';
 $lang['addresses'] = 'Addresses';
 

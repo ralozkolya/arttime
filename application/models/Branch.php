@@ -23,14 +23,14 @@ class Branch extends MY_Model {
 		]);
 
 		$this->db->join('branches_gallery',
-			"branches_gallery.branch = {$this->table}.id");
+			"branches_gallery.branch = {$this->table}.id", 'left');
 
 		$this->db->group_by("{$this->table}.id");
 
 		return parent::get_list();
 	}
 
-	public function get($id) {
+	public function get_locale($id) {
 
 		$lang = get_lang_code(get_lang());
 
@@ -47,7 +47,26 @@ class Branch extends MY_Model {
 		]);
 
 		return parent::get($id);
+	}
 
+	public function add($data) {
+
+		if(empty($data['slug'])) {
+			$data['slug'] = $this->generate_slug($data['en_address']);
+		}
+
+		return parent::add($data);
+	}
+
+	public function delete($id) {
+
+		$gallery = $this->Branch_gallery->get_for_branch($id);
+
+		foreach($gallery as $g) {
+			$this->Branch_gallery->delete($g->id);
+		}
+
+		return parent::delete($id);
 	}
 
 }

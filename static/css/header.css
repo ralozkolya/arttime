@@ -67,6 +67,10 @@
 	padding: 5px 0;
 }
 
+.subnav > li:hover {
+	color: #dd1921;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 992px) {

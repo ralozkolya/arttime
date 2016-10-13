@@ -12,6 +12,28 @@ class Branch_gallery extends MY_Model {
 		return parent::get_list();
 	}
 
+	public function delete($id) {
+
+		$img = $this->get($id);
+		$path = 'static/uploads/branches/';
+
+		$name = $path.$img->image;
+
+		if(file_exists($name) && !is_dir($name)) {
+
+			unlink($name);
+		}
+
+		$name = $path.'thumbs/'.$img->image;
+
+		if(file_exists($name) && !is_dir($name)) {
+
+			unlink($name);
+		}
+
+		return parent::delete($id);
+	}
+
 }
 
 /* End of file Branch_gallery.php */

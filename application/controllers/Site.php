@@ -40,6 +40,10 @@ class Site extends MY_Controller {
 		$this->data['gallery'] = $this->get_branch_gallery($id);
 		$this->data['slug'] = 'about_us';
 
+		if(!$this->data['branch']) {
+			show_404();
+		}
+
 		$this->load->view('pages/about_us', $this->data);
 	}
 
@@ -75,6 +79,11 @@ class Site extends MY_Controller {
 		$this->data['slug'] = 'news';
 
 		$this->data['post'] = $this->get_post($id);
+
+		if(!$this->data['post']) {
+			show_404();
+		}
+
 		$this->load->view('pages/post', $this->data);
 	}
 
@@ -117,7 +126,7 @@ class Site extends MY_Controller {
 
 		$this->load->model('Branch');
 
-		return $this->Branch->get($id);
+		return $this->Branch->get_locale($id);
 	}
 
 	private function get_branch_gallery($branch) {

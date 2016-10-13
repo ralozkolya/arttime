@@ -4,6 +4,4 @@ $(function(){
 		return confirm(lang.areYouSure);
 	});
 
-	$('.ckeditor').ckeditor();
-
 });

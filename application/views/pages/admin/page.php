@@ -22,11 +22,6 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<form method="post">
-						<?php
-							$name = $this->security->get_csrf_token_name();
-							$hash = $this->security->get_csrf_hash();
-						?>
-						<input type="hidden" name="<?php echo $name; ?>" value="<?php echo $hash; ?>">
 						<input type="hidden" name="id" value="<?php echo $page->id; ?>">
 						<div class="form-group">
 							<?php echo lang('ka_title', 'ka_title'); ?>
@@ -43,11 +38,11 @@
 						<?php if($page->editable): ?>
 							<div class="form-group">
 								<?php echo lang('ka_body', 'ka_body'); ?>
-								<textarea class="form-control cke" name="ka_body"><?php echo $page->ka_body; ?></textarea>
+								<textarea class="form-control ckeditor" name="ka_body"><?php echo $page->ka_body; ?></textarea>
 							</div>
 							<div class="form-group">
 								<?php echo lang('en_body', 'en_body'); ?>
-								<textarea class="form-control cke" name="en_body"><?php echo $page->en_body; ?></textarea>
+								<textarea class="form-control ckeditor" name="en_body"><?php echo $page->en_body; ?></textarea>
 							</div>
 						<?php endif; ?>
 						<div class="form-group">

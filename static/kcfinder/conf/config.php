@@ -30,7 +30,7 @@ $_CONFIG = array(
 
     // (F)CKEditor types
         'pages'  =>  "*img",
-        'products'  =>  "*img",
+        'branches'  =>  "*img",
         'videos'  => "disabled",
         'files'   =>  "disabled",
         'flash'   =>  "disabled",

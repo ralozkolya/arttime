@@ -7,8 +7,8 @@
 
 	<script>
 		var loc = {
-			latitude: 41.720910728527635,
-			longitude: 44.78495669364929,
+			latitude: <?php echo $branch->latitude; ?>,
+			longitude: <?php echo $branch->longitude; ?>,
 		}
 	</script>
 
@@ -22,41 +22,19 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-xs-12">
-					<h1><?php echo lang('branches'); ?></h1>
+					<h1><?php echo $branch->ka_address; ?></h1>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-xs-12">
 					<?php $this->load->view('elements/messages'); ?>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-sm-6">
-					<h3><?php echo lang('existing_branches'); ?></h3>
-					<table class="table table-striped">
-						<?php foreach($branches as $b): ?>
-							<tr>
-								<td><?php echo $b->location; ?></td>
-								<td><?php echo $b->address; ?></td>
-								<td class="glyph-container">
-									<a href="<?php echo base_url('admin/branch/'.$b->id); ?>">
-										<span class="glyphicon glyphicon-edit"></span>
-									</a>
-								</td>
-								<td class="glyph-container">
-									<a href="<?php echo base_url('admin/delete/Branch/'.$b->id); ?>" class="unstyled delete">
-										<span class="glyphicon glyphicon-remove"></span>
-									</a>
-								</td>
-							</tr>
-						<?php endforeach; ?>
-					</table>
-				</div>
-				<div class="col-sm-6">
-					<h3><?php echo lang('add_branch'); ?></h3>
-					<form method="post" enctype="multipart/form-data">
+					<h3><?php echo lang('edit_branch'); ?></h3>
+					<form method="post">
+						<input type="hidden" name="id" value="<?php echo $branch->id; ?>">
 						<input type="hidden" name="latitude" id="latitude">
 						<input type="hidden" name="longitude" id="longitude">
 						<div class="form-group">
@@ -65,7 +43,7 @@
 								class="form-control"
 								name="ka_location"
 								id="ka_location"
-								value="<?php echo set_value('ka_location'); ?>">
+								value="<?php echo $branch->ka_location; ?>">
 						</div>
 						<div class="form-group">
 							<?php echo lang('en_location', 'en_location'); ?>
@@ -73,7 +51,7 @@
 								class="form-control"
 								name="en_location"
 								id="en_location"
-								value="<?php echo set_value('en_location'); ?>">
+								value="<?php echo $branch->en_location; ?>">
 						</div>
 						<div class="form-group">
 							<?php echo lang('ka_address', 'ka_address'); ?>
@@ -81,7 +59,7 @@
 								class="form-control"
 								name="ka_address"
 								id="ka_address"
-								value="<?php echo set_value('ka_address'); ?>">
+								value="<?php echo $branch->ka_address; ?>">
 						</div>
 						<div class="form-group">
 							<?php echo lang('en_address', 'en_address'); ?>
@@ -89,7 +67,7 @@
 								class="form-control"
 								name="en_address"
 								id="en_address"
-								value="<?php echo set_value('en_address'); ?>">
+								value="<?php echo $branch->en_address; ?>">
 						</div>
 						<div class="form-group">
 							<?php echo lang('ka_description', 'ka_description'); ?>
@@ -97,7 +75,7 @@
 								class="ckeditor"
 								name="ka_description"
 								id="ka_description">
-								<?php echo set_value('ka_description'); ?>
+								<?php echo $branch->ka_description; ?>
 							</textarea>
 						</div>
 						<div class="form-group">
@@ -106,16 +84,8 @@
 								class="ckeditor"
 								name="en_description"
 								id="en_description">
-								<?php echo set_value('en_description'); ?>
+								<?php echo $branch->en_description; ?>
 							</textarea>
-						</div>
-						<div class="form-group">
-							<?php echo lang('images', 'images'); ?>
-							<input
-								class="form-control"
-								name="images[]"
-								id="images"
-								type="file" multiple>
 						</div>
 						<div class="form-group">
 							<?php echo lang('working_hours', 'working_hours'); ?>
@@ -123,7 +93,7 @@
 								class="form-control"
 								name="working_hours"
 								id="working_hours"
-								value="<?php echo set_value('working_hours'); ?>">
+								value="<?php echo $branch->working_hours; ?>">
 						</div>
 						<div class="form-group">
 							<?php echo lang('phone', 'phone'); ?>
@@ -131,15 +101,38 @@
 								class="form-control"
 								name="phone"
 								id="phone"
-								value="<?php echo set_value('phone'); ?>">
+								value="<?php echo $branch->phone; ?>">
 						</div>
 						<div class="form-group">
 							<div id="location-picker"></div>
 						</div>
 						<div class="form-group">
-							<input class="btn btn-default" type="submit" value="<?php echo lang('add'); ?>">
+							<input class="btn btn-default" type="submit" value="<?php echo lang('change'); ?>">
+							<a class="btn btn-primary" href="<?php echo base_url('admin/branches'); ?>"><?php echo lang('back'); ?></a>
 						</div>
 					</form>
+				</div>
+				<div class="col-sm-6">
+					<h3><?php echo lang('gallery'); ?></h3>
+					<form action="<?php echo base_url('admin/upload_images'); ?>" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="branch" value="<?php echo $branch->id; ?>">
+						<div class="form-group">
+							<?php echo lang('upload_recommended', 'image'); ?>
+							<input class="form-control" type="file" name="images[]" id="image" multiple required>
+						</div>
+						<div class="form-group">
+							<input class="btn btn-default" type="submit" value="<?php echo lang('upload'); ?>">
+						</div>
+					</form>
+					<br>
+					<?php foreach($gallery as $g): ?>
+						<div class="thumb">
+							<img alt="<?php echo $g->image; ?>" src="<?php echo static_url('uploads/branches/thumbs/'.$g->image); ?>">
+							<a href="<?php echo base_url('admin/delete/Branch_gallery/'.$g->id); ?>" class="unstyled delete">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+						</div>
+					<?php endforeach; ?>
 				</div>
 			</div>
 		</div>
