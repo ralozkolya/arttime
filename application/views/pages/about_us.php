@@ -26,9 +26,11 @@
 		<div class="content">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6 fotorama-container">
-						<?php $this->load->view('elements/branch_images'); ?>
-					</div>
+					<?php if(!empty($gallery)): ?>
+						<div class="col-sm-6 fotorama-container">
+							<?php $this->load->view('elements/branch_images'); ?>
+						</div>
+					<?php endif; ?>
 					<div class="col-sm-6 text-center">
 						<h2 class="address caps">
 							<?php echo $branch->address; ?>
@@ -44,9 +46,9 @@
 							<?php echo $branch->phone; ?>
 						</h4>
 						<br>
-						<p class="description">
+						<div class="description">
 							<?php echo $branch->description; ?>
-						</p>
+						</div>
 						<div id="map"></div>
 					</div>
 				</div>

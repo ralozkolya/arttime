@@ -16,7 +16,10 @@
 						<img src="<?php echo static_url('uploads/news/'.$post->image); ?>" alt="<?php echo $post->title; ?>">
 					</div>
 					<div class="col-sm-6">
-						<h2 class="caps"><strong><?php echo $post->title; ?></strong></h2>
+						<h2 class="caps text-center">
+							<strong><?php echo $post->title; ?></strong>
+						</h2>
+						<br><br>
 						<p><?php echo $post->body; ?></p>
 					</div>
 				</div>

@@ -1,5 +1,3 @@
-<?php if(!empty($gallery)): ?>
-
 <div class="fotorama"
 	data-nav="thumbs"
 	data-width="100%"
@@ -19,5 +17,3 @@
 	$('.fotorama').attr('data-thumbwidth', width);
 	$('.fotorama').attr('data-thumbheight', width * 9 / 16);
 </script>
-
-<?php endif; ?>
