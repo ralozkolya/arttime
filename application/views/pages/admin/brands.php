@@ -45,7 +45,7 @@
 					<h3><?php echo lang('add_brand'); ?></h3>
 					<form method="post" enctype="multipart/form-data">
 						<div class="form-group">
-							<?php echo lang('image_pinned', 'image'); ?>
+							<?php echo lang('image_brand', 'image'); ?>
 							<input class="form-control" type="file" name="image" id="image">
 						</div>
 						<div class="form-group">

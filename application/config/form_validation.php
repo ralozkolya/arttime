@@ -216,6 +216,66 @@ $config['edit_Branch'] = array(
 	),
 );
 
+$config['add_News'] = array(
+
+	array(
+		'field' => 'ka_title',
+		'label' => 'lang:ka_title',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_title',
+		'label' => 'lang:en_title',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'ka_body',
+		'label' => 'lang:ka_body',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_body',
+		'label' => 'lang:en_body',
+		'rules' => 'required',
+	),
+);
+
+$config['edit_News'] = array(
+
+	array(
+		'field' => 'id',
+		'label' => 'lang:id',
+		'rules' => 'required|is_natural',
+	),
+
+	array(
+		'field' => 'ka_title',
+		'label' => 'lang:ka_title',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_title',
+		'label' => 'lang:en_title',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'ka_body',
+		'label' => 'lang:ka_body',
+		'rules' => 'required',
+	),
+
+	array(
+		'field' => 'en_body',
+		'label' => 'lang:en_body',
+		'rules' => 'required',
+	),
+);
+
 $config['add_images'] = array(
 	array(
 		'field' => 'branch',

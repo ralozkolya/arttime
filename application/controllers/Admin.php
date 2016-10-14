@@ -11,7 +11,7 @@ class Admin extends MY_Controller {
 
 		$this->load->model([
 			'User', 'Page', 'Banner', 'Brand',
-			'Branch', 'Branch_gallery',
+			'Branch', 'Branch_gallery', 'News',
 		]);
 
 		$this->load->library(['Auth', 'session', 'form_validation', 'user_agent']);
@@ -326,10 +326,75 @@ class Admin extends MY_Controller {
 		}
 
 		$this->data['highlighted'] = 'information';
-		$this->data['information'] = $this->Brand->get_list();
-		$this->data['priority'] = $this->Brand->get_next_priority();
+		$this->data['information'] = $this->News->get_list();
 
 		$this->load->view('pages/admin/information', $this->data);
+	}
+
+	public function post($id) {
+
+		$post = $this->input->post();
+		$new_image;
+
+		if($post) {
+
+			$this->load->library(['upload', 'image_lib']);
+
+			$config = [];
+			$config['allowed_types'] = 'png|jpg|gif';
+			$config['upload_path'] = 'static/uploads/news/';
+			$config['encrypt_name'] = TRUE;
+
+			$this->upload->initialize($config);
+
+			if($this->upload->do_upload('image')) {
+
+				$upload = $this->upload->data();
+
+				$new_image = 'static/uploads/news/thumbs/'.$upload['file_name'];
+
+				if(!empty($upload['full_path'])) {
+
+					$config = [];
+					$config['source_image'] = $upload['full_path'];
+					$config['source_image'] = $upload['full_path'];
+					$config['width'] = 400;
+					$config['height'] = 300;
+					$config['maintain_ratio'] = TRUE;
+					$config['new_image'] = $new_image;
+
+					$this->image_lib->initialize($config);
+					$this->image_lib->resize();
+				}
+
+				else {
+					$this->data['error_message'] = $this->image_lib->display_errors();
+				}
+
+				$post['image'] = $upload['file_name'];
+			}
+
+			else {
+				$this->data['error_message'] = $this->upload->display_errors();
+			}
+
+			$this->edit('News', $post);
+
+			if(!empty($upload)) {
+				if(file_exists($upload['full_path'])) {
+					unlink($upload['full_path']);
+				}
+
+				if(file_exists($new_image)) {
+					unlink($new_image);
+				}
+			}
+		}
+
+		$this->data['highlighted'] = 'information';
+		$this->data['post'] = $this->News->get($id);
+
+		$this->load->view('pages/admin/post', $this->data);
 	}
 
 	public function user() {
@@ -364,7 +429,7 @@ class Admin extends MY_Controller {
 	public function add($type, $data) {
 
 		$allowed = [
-			'Banner', 'Brand', 'Branch',
+			'Banner', 'Brand', 'Branch', 'News',
 		];
 
 		$is_allowed = FALSE;
@@ -409,7 +474,7 @@ class Admin extends MY_Controller {
 	public function edit($type, $data) {
 
 		$allowed = [
-			'Banner', 'Page', 'Brand', 'Branch',
+			'Banner', 'Page', 'Brand', 'Branch', 'News',
 		];
 
 		$is_allowed = FALSE;
@@ -449,7 +514,7 @@ class Admin extends MY_Controller {
 	public function delete($type, $id) {
 
 		$allowed = [
-			'Banner', 'Brand', 'Branch', 'Branch_gallery',
+			'Banner', 'Brand', 'Branch', 'Branch_gallery', 'News',
 		];
 
 		$is_allowed = FALSE;

@@ -52,7 +52,7 @@ class Site extends MY_Controller {
 		$this->data['slug'] = 'news';
 
 		$this->data['page'] = $this->Page->get_by_key('slug', 'news');
-		$this->data['news'] = $this->get_news();
+		$this->data['news'] = $this->get_news(1);
 		$this->load->view('pages/news', $this->data);
 	}
 
@@ -61,7 +61,7 @@ class Site extends MY_Controller {
 		$this->data['slug'] = 'news';
 
 		$this->data['page'] = $this->Page->get_by_key('slug', 'tips');
-		$this->data['news'] = $this->get_news();
+		$this->data['news'] = $this->get_news(2);
 		$this->load->view('pages/news', $this->data);
 	}
 
@@ -70,7 +70,7 @@ class Site extends MY_Controller {
 		$this->data['slug'] = 'news';
 
 		$this->data['page'] = $this->Page->get_by_key('slug', 'service');
-		$this->data['news'] = $this->get_news();
+		$this->data['news'] = $this->get_news(3);
 		$this->load->view('pages/news', $this->data);
 	}
 
@@ -136,11 +136,11 @@ class Site extends MY_Controller {
 		return $this->Branch_gallery->get_for_branch($branch);
 	}
 
-	private function get_news() {
+	private function get_news($category) {
 
 		$this->load->model('News');
 
-		return $this->News->get_list();
+		return $this->News->get_by_category($category);
 	}
 
 	private function get_post($id) {
