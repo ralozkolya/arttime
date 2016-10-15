@@ -72,7 +72,7 @@
 								value="<?php echo set_value('link'); ?>">
 						</div>
 						<div class="form-group">
-							<input class="btn btn-default" type="submit" value="<?php echo lang('add'); ?>"
+							<input class="btn btn-default" type="submit" value="<?php echo lang('add'); ?>">
 						</div>
 					</form>
 				</div>
