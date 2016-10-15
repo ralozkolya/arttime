@@ -126,7 +126,7 @@
 }
 
 .branch > .image {
-	height: 250px;
+	height: 200px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -156,6 +156,10 @@
 @media (min-width: 1200px) {
 	.slider, .slide {
 		height: 400px;
+	}
+
+	.branch .image {
+		height: 250px;
 	}
 }
 

@@ -87,7 +87,7 @@
 									$image = static_url('uploads/branches/thumbs/'.$image);
 								}
 							?>
-							<div class="col-sm-4">
+							<div class="col-sm-6 col-md-4">
 								<a href="<?php echo locale_url("branch/{$b->id}/$b->slug"); ?>"
 									class="unstyled">
 									<div class="branch text-center">
