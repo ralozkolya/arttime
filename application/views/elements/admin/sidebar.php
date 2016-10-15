@@ -61,6 +61,17 @@
 		<li>
 			<?php
 				$class = 'unstyled';
+				if($highlighted === 'other') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/other'); ?>">
+				<?php echo lang('other'); ?>
+			</a>
+		</li>
+		<li>
+			<?php
+				$class = 'unstyled';
 				if($highlighted === 'user') {
 					$class .= ' active';
 				}

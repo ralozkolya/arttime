@@ -81,6 +81,13 @@ $lang['news'] = 'სიახლეები';
 $lang['tips'] = 'რჩევები';
 $lang['service'] = 'მომსახურება';
 
+$lang['other'] = 'სხვა';
+$lang['social'] = 'სოციალური ქსელები';
+$lang['facebook_swatch'] = 'Swatch (Facebook)';
+$lang['facebook_arttime'] = 'Arttime (Facebook)';
+$lang['instagram'] = 'Instagram';
+$lang['youtube'] = 'Youtube';
+
 $lang['description'] = 'Description';
 $lang['date'] = 'Date';
 

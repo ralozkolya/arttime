@@ -276,6 +276,14 @@ $config['edit_News'] = array(
 	),
 );
 
+$config['edit_Social'] = array(
+	array(
+		'field' => 'id',
+		'label' => 'lang:id',
+		'rules' => 'is_natural',
+	),
+);
+
 $config['add_images'] = array(
 	array(
 		'field' => 'branch',

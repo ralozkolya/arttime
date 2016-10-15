@@ -12,6 +12,7 @@ class Admin extends MY_Controller {
 		$this->load->model([
 			'User', 'Page', 'Banner', 'Brand',
 			'Branch', 'Branch_gallery', 'News',
+			'Social',
 		]);
 
 		$this->load->library(['Auth', 'session', 'form_validation', 'user_agent']);
@@ -425,8 +426,26 @@ class Admin extends MY_Controller {
 		$this->load->view('pages/admin/user', $this->data);
 	}
 
+	public function other() {
 
-	public function add($type, $data) {
+		$this->data['social'] = $this->Social->get_links();
+
+		$this->data['highlighted'] = 'other';
+		$this->load->view('pages/admin/other', $this->data);
+	}
+
+	public function change_social() {
+
+		if($this->input->post()) {
+
+			$this->edit('Social');
+		}
+
+		$this->other();
+	}
+
+
+	public function add($type, $data = NULL) {
 
 		$allowed = [
 			'Banner', 'Brand', 'Branch', 'News',
@@ -471,10 +490,11 @@ class Admin extends MY_Controller {
 		}
 	}
 
-	public function edit($type, $data) {
+	public function edit($type, $data = NULL) {
 
 		$allowed = [
-			'Banner', 'Page', 'Brand', 'Branch', 'News',
+			'Banner', 'Page', 'Brand', 'Branch',
+			'News', 'Social',
 		];
 
 		$is_allowed = FALSE;
@@ -507,6 +527,7 @@ class Admin extends MY_Controller {
 		}
 
 		else {
+
 			$this->data['error_message'] = validation_errors('<div>', '</div>');
 		}
 	}

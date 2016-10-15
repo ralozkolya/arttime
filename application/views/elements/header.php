@@ -80,21 +80,23 @@
 				 --><span class="social-arrow">
 					<span class="glyphicon glyphicon-triangle-right"></span>
 					<span class="facebook-pages">
-						<a href="https://www.facebook.com/Arttimegeo/" target="_blank">
+						<a href="<?php echo $social['facebook_arttime']; ?>" target="_blank">
 							<img src="<?php echo static_url('img/arttime_social.png'); ?>"
 								alt="Arttime">
 						</a>
-						<a href="https://www.facebook.com/Swatchgeo/" target="_blank">
+						<a href="<?php echo $social['facebook_swatch']; ?>" target="_blank">
 							<img src="<?php echo static_url('img/swatch_social.png'); ?>"
 								alt="Swatch">
 						</a>
 					</span>
 				</span>
 			</li>
-			<li><a class="unstyled social-link instagram" href="#">
+			<li><a class="unstyled social-link instagram"
+				href="<?php echo $social['instagram']; ?>" target="_blank">
 				<span class="fa fa-instagram"></span>
 			</a></li>
-			<li><a class="unstyled social-link youtube" href="#">
+			<li><a class="unstyled social-link youtube"
+				href="<?php echo $social['youtube']; ?>" target="_blank">
 				<span class="fa fa-youtube"></span>
 			</a></li>
 		</ul>
