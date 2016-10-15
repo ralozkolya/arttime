@@ -16,6 +16,7 @@ class Site extends MY_Controller {
 		$this->data['navigation'] = $this->get_navigation();
 		$this->data['subnavigation'] = $this->get_navigation(TRUE);
 		$this->data['social'] = $this->get_social();
+		$this->data['shops'] = $this->get_shops();
 	}
 
 	public function index()	{
@@ -155,6 +156,12 @@ class Site extends MY_Controller {
 
 		$this->load->model('Social');
 		return $this->Social->get_links();
+	}
+
+	private function get_shops() {
+
+		$this->load->model('Shop');
+		return $this->Shop->get_list();
 	}
 }
 

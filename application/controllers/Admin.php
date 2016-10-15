@@ -12,7 +12,7 @@ class Admin extends MY_Controller {
 		$this->load->model([
 			'User', 'Page', 'Banner', 'Brand',
 			'Branch', 'Branch_gallery', 'News',
-			'Social',
+			'Social', 'Shop',
 		]);
 
 		$this->load->library(['Auth', 'session', 'form_validation', 'user_agent']);
@@ -428,10 +428,27 @@ class Admin extends MY_Controller {
 
 	public function other() {
 
+		if($this->input->post()) {
+			$this->add('Shop');
+		}
+
+		$this->data['shops'] = $this->Shop->get_list();
 		$this->data['social'] = $this->Social->get_links();
 
 		$this->data['highlighted'] = 'other';
 		$this->load->view('pages/admin/other', $this->data);
+	}
+
+	public function shop($id) {
+
+		if($this->input->post()) {
+			$this->edit('Shop');
+		}
+
+		$this->data['highlighted'] = 'other';
+		$this->data['shop'] = $this->Shop->get($id);
+
+		$this->load->view('pages/admin/shop', $this->data);
 	}
 
 	public function change_social() {
@@ -448,7 +465,7 @@ class Admin extends MY_Controller {
 	public function add($type, $data = NULL) {
 
 		$allowed = [
-			'Banner', 'Brand', 'Branch', 'News',
+			'Banner', 'Brand', 'Branch', 'News', 'Shop',
 		];
 
 		$is_allowed = FALSE;
@@ -494,7 +511,7 @@ class Admin extends MY_Controller {
 
 		$allowed = [
 			'Banner', 'Page', 'Brand', 'Branch',
-			'News', 'Social',
+			'News', 'Social', 'Shop',
 		];
 
 		$is_allowed = FALSE;
@@ -535,7 +552,8 @@ class Admin extends MY_Controller {
 	public function delete($type, $id) {
 
 		$allowed = [
-			'Banner', 'Brand', 'Branch', 'Branch_gallery', 'News',
+			'Banner', 'Brand', 'Branch', 'Branch_gallery',
+			'News', 'Shop',
 		];
 
 		$is_allowed = FALSE;

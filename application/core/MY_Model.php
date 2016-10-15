@@ -81,6 +81,17 @@ class MY_Model extends CI_Model {
 		return $slug;
 	}
 
+	protected function prep_url($url) {
+
+		if(empty($url) || $url === '#') {
+			return $url;
+		}
+
+		else {
+			return prep_url($url);
+		}
+	}
+
 }
 
 /* End of file MY_Model.php */

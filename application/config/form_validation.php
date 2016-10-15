@@ -284,6 +284,47 @@ $config['edit_Social'] = array(
 	),
 );
 
+$config['add_Shop'] = array(
+	array(
+		'field' => 'ka_name',
+		'label' => 'lang:ka_name',
+		'rules' => 'required',
+	),
+	array(
+		'field' => 'en_name',
+		'label' => 'lang:en_name',
+		'rules' => 'required',
+	),
+	array(
+		'field' => 'link',
+		'label' => 'lang:link',
+		'rules' => 'required',
+	),
+);
+
+$config['edit_Shop'] = array(
+	array(
+		'field' => 'id',
+		'label' => 'lang:id',
+		'rules' => 'required|is_natural',
+	),
+	array(
+		'field' => 'ka_name',
+		'label' => 'lang:ka_name',
+		'rules' => 'required',
+	),
+	array(
+		'field' => 'en_name',
+		'label' => 'lang:en_name',
+		'rules' => 'required',
+	),
+	array(
+		'field' => 'link',
+		'label' => 'lang:link',
+		'rules' => 'required',
+	),
+);
+
 $config['add_images'] = array(
 	array(
 		'field' => 'branch',

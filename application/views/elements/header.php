@@ -3,10 +3,24 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="text-right">
-					<a href="#" class="online-shop-button unstyled">
-						<span class="glyphicon glyphicon-shopping-cart"></span>
-						<?php echo lang('online_shop') ?>	
-					</a>
+					<span class="shops-container parent">
+						<a href="#" class="online-shop-button unstyled">
+							<span class="glyphicon glyphicon-shopping-cart"></span>
+							<?php echo lang('online_shop') ?>
+						</a>
+						<?php if(!empty($shops)): ?>
+							<ul class="shops dropdown">
+								<?php foreach($shops as $s): ?>
+									<li>
+										<a target="_blank"
+											class="unstyled" href="<?php echo $s->link; ?>">
+											<?php echo $s->name; ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						<?php endif; ?>
+					</span>
 					<strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</strong>
 					<div class="lang pull-right">
 						<div>
@@ -56,7 +70,7 @@
 								</a>
 
 								<?php if($n->id === '4'): ?>
-									<ul class="subnav">
+									<ul class="subnav dropdown">
 										<?php foreach($subnavigation as $s): ?>
 											<li>
 												<a class="unstyled" href="<?php echo locale_url($s->slug); ?>"><?php echo $s->title; ?></a>

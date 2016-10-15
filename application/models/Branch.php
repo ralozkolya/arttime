@@ -5,7 +5,7 @@ class Branch extends MY_Model {
 
 	protected $table = 'branches';
 
-	public function get_list($offset = NULL, $limit = NULL) {
+	public function get_list($limit = NULL, $offset = NULL) {
 
 		$lang = get_lang_code(get_lang());
 

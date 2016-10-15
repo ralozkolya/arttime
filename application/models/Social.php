@@ -41,17 +41,6 @@ class Social extends MY_Model {
 		return TRUE;
 	}
 
-	private function prep_url($url) {
-
-		if(empty($url) || $url === '#') {
-			return $url;
-		}
-
-		else {
-			return prep_url($url);
-		}
-	}
-
 }
 
 /* End of file Social.php */

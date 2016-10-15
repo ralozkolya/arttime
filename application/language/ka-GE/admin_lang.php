@@ -88,6 +88,9 @@ $lang['facebook_arttime'] = 'Arttime (Facebook)';
 $lang['instagram'] = 'Instagram';
 $lang['youtube'] = 'Youtube';
 
+$lang['shops'] = 'ონლაინ მაღაზიები';
+$lang['add_shop'] = 'მაღაზიის დამატება';
+
 $lang['description'] = 'Description';
 $lang['date'] = 'Date';
 

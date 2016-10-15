@@ -18,8 +18,10 @@ $(function(){
 	});
 
 	$('.parent').hover(function(){
-		$('.subnav').stop().slideDown();
+		$('.dropdown', this).stop().slideDown();
 	}, function(){
-		$('.subnav').stop().slideUp();
+		$('.dropdown', this).stop().slideUp();
 	});
+
+	$('.shops').width($('.online-shop-button').outerWidth());
 });
