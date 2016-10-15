@@ -26,6 +26,23 @@
 						<?php foreach($information as $i): ?>
 							<tr>
 								<td><?php echo $i->title; ?></td>
+								<td>
+								<?php
+									switch($i->category) {
+										case 1:
+											echo lang('news');
+											break;
+
+										case 2:
+											echo lang('tips');
+											break;
+
+										case 3:
+											echo lang('service');
+											break;
+									}
+								?>
+								</td>
 								<td class="glyph-container">
 									<a href="<?php echo base_url('admin/post/'.$i->id); ?>">
 										<span class="glyphicon glyphicon-edit"></span>

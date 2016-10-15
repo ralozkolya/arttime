@@ -12,7 +12,7 @@ class News extends MY_Model {
 		$this->db->select([
 			"{$lang}_title as title",
 			"{$lang}_body as body",
-			"slug", "image", "id",
+			'slug', 'image', 'id', 'category',
 		]);
 
 		return parent::get_list();
@@ -31,7 +31,8 @@ class News extends MY_Model {
 		$this->db->select([
 			"{$lang}_title as title",
 			"{$lang}_body as body",
-			"slug", "image", "id", "modified",
+			'slug', 'image', 'id',
+			'modified', 'category',
 		]);
 
 		return parent::get($id);
