@@ -498,7 +498,7 @@ class Admin extends MY_Controller {
 			}
 
 			else {
-				$this->message(lang('unexpected_error'), ERRIR);
+				$this->message(lang('unexpected_error'), ERROR);
 			}
 		}
 
