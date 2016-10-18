@@ -23,5 +23,9 @@ $(function(){
 		$('.dropdown', this).stop().slideUp();
 	});
 
-	$('.shops').width($('.online-shop-button').outerWidth());
+	$('.online-shop-button').hover(function(){
+		$('.shops').innerWidth($('.online-shop-button').innerWidth());
+	});
+
+	//$('.shops').width($('.online-shop-button').outerWidth());
 });
