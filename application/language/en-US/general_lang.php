@@ -17,3 +17,5 @@ $lang['send'] = 'Send';
 
 $lang['service'] = 'Consumer service';
 $lang['necessary_info'] = 'Information';
+
+$lang['successfully_sent'] = 'Successfully sent';

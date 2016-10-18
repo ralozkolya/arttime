@@ -17,3 +17,5 @@ $lang['send'] = 'გაგზავნა';
 
 $lang['service'] = 'მომსახურება';
 $lang['necessary_info'] = 'საჭირო ინფორმაცია';
+
+$lang['successfully_sent'] = 'წარმატებით გაიგზავნა';

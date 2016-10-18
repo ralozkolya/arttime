@@ -91,10 +91,35 @@ class Site extends MY_Controller {
 
 	public function contact() {
 
+		$this->load->library(['form_validation', 'user_agent']);
+
+		if($this->input->post()) {
+			$this->send_mail();
+		}
+
 		$this->data['page'] = $this->Page->get_by_key('slug', 'contact');
 		$this->data['slug'] = 'contact';
 
 		$this->load->view('pages/contact', $this->data);
+	}
+
+	public function send_mail() {
+
+		$this->load->helper('email_sender');
+
+		if(!$this->input->post()) {
+			$this->data['error_message'] = lang('unexpected_error');
+		}
+
+		if($this->form_validation->run('send_mail')) {
+			send_message($this->input->post());
+			$this->session->set_flashdata('success_message', lang('successfully_sent'));
+			redirect($this->agent->referrer());
+		}
+
+		else {
+			$this->data['error_message'] = validation_errors('<div>', '</div>');
+		}
 	}
 
 	private function get_navigation($sub = FALSE) {

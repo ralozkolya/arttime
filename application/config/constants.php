@@ -41,3 +41,5 @@ define('PROTOCOL', $protocol);
 
 define('SUCCESS', 'success_message');
 define('ERROR', 'error_message');
+
+define('INFO_MAIL', 'info@arttime.ge');

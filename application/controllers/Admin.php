@@ -15,7 +15,7 @@ class Admin extends MY_Controller {
 			'Social', 'Shop',
 		]);
 
-		$this->load->library(['Auth', 'session', 'form_validation', 'user_agent']);
+		$this->load->library(['Auth', 'form_validation', 'user_agent']);
 
 		$this->data['user'] = $this->auth->get_current_user();
 
