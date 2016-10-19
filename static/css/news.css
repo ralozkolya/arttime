@@ -2,6 +2,12 @@
 	height: 250px;
 	margin: 10px 0;
 	overflow: hidden;
+	border: solid 2px #ecf0f1;
+	transition: border-color .4s;
+}
+
+.news:hover {
+	border-color: black;
 }
 
 .news > div {

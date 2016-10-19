@@ -123,6 +123,12 @@
 	padding: 5px;
 	margin: 15px 0;
 	font-size: 18px;
+	transition: background .5s, color .4s;
+}
+
+.branch:hover {
+	background: black;
+	color: white;
 }
 
 .branch > .image {
