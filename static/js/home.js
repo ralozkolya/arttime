@@ -11,6 +11,7 @@ $(function(){
 
 	$('[data-scroll-to]').click(function(){
 		showBrands($(this).attr('data-scroll-to'));
+		console.log($(this).attr('data-scroll-to'));
 		return false;
 	});
 
@@ -69,7 +70,7 @@ function getRealOffset(from) {
 
 function showBrands(scrollTo) {
 
-	$('body').animate({
+	$('html,body').animate({
 		scrollTop: getOffset(scrollTo),
 	}, 500);
 }
