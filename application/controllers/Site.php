@@ -124,6 +124,20 @@ class Site extends MY_Controller {
 		}
 	}
 
+	public function sitemap() {
+
+		header('Content-Type: text/xml; charset="utf-8"');
+
+		$this->load->model('News');
+
+		$this->data['news'] = $this->News->get_list();
+
+		$this->load->view('xml/sitemap', $this->data);
+	}
+
+
+	/*	RETURN FROM DB	*/
+
 	private function get_navigation($sub = FALSE) {
 
 		$this->load->model('Page');

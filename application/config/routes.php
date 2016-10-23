@@ -8,6 +8,8 @@ $route['('.GE.'|'.EN.')/branch/(:num)/(:any)'] = 'site/branch/$2';
 
 $route['('.GE.'|'.EN.')'] = 'site';
 
+$route['sitemap.xml'] = 'site/sitemap';
+
 $route['default_controller'] = 'site';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

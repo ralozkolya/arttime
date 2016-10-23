@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = PROTOCOL.'arttime.ge/';
+$config['base_url'] = PROTOCOL.'www.arttime.ge/';
 
 /*
 |--------------------------------------------------------------------------
