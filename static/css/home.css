@@ -11,12 +11,12 @@
 	top: 50%;
 	transform: translateY(-50%);
 	color: #eee;
+	background: rgba(0, 0, 0, 0.3);
 	font-size: 25px;
 	padding: 15px 5px;
 	text-align: center;
 	cursor: pointer;
 	border: solid 1px white;
-	box-shadow: 3px 3px 3px #555;
 }
 
 .arrow.left {
