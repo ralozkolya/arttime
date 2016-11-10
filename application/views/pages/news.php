@@ -29,7 +29,11 @@
 											<div class="text">
 												<h4 class="caps"><strong><?php echo $n->title; ?></strong></h4>
 												<br>
-												<div class="text-center"><?php echo $n->body; ?></div>
+												<?php
+													$body = strip_tags($n->body);
+													$body = mb_substr($body, 0, 150).'...';
+												?>
+												<div class="text-center"><?php echo $body; ?></div>
 											</div>
 										</div>
 									<?php else: ?>
