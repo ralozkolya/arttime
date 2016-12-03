@@ -19,6 +19,13 @@
 					</div>
 				</div>
 				<div class="row">
+					<div class="col-sm-6 text-center">
+						<h3 class="red caps"><strong><?php echo lang('contact_info'); ?></strong></h3>
+						<br>
+						<br>
+						<br>
+						<?php echo $page->body; ?>
+					</div>
 					<div class="col-sm-6">
 						<h3 class="red caps"><strong><?php echo lang('contact_us'); ?></strong></h3>
 						<?php $this->load->view('elements/messages'); ?>
@@ -46,13 +53,6 @@
 								<input type="submit" class="send-button" value="<?php echo lang('send'); ?>">
 							</div>
 						</form>
-					</div>
-					<div class="col-sm-6 text-center">
-						<h3 class="red caps"><strong><?php echo lang('contact_info'); ?></strong></h3>
-						<br>
-						<br>
-						<br>
-						<?php echo $page->body; ?>
 					</div>
 				</div>
 			</div>
