@@ -32,7 +32,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 define('EN', 'en-US');
 define('GE', 'ka-GE');
 
-define('V', 2);
+define('V', 3);
 
 $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;
 $protocol = $secure ? 'https://' : 'http://';
